@@ -1,0 +1,41 @@
+[
+  {
+    "id": "WANTWOMBAN",
+    "path": "C:\\TOMONETMALFORMED\\WANTWOMBAN.pdf",
+    "bytes": 660794,
+    "sha256": "cc0d81471fe33497873faa6339aa487532c8861902761994d3c88b16c17ea662",
+    "pages": 25,
+    "chars": 65363,
+    "attachments": [
+      "Pasted markdown.md",
+      "wantwomban_reference.py"
+    ]
+  },
+  {
+    "id": "ATOM_TOTAL",
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3.6_Total_Integrated_Engine_Tom_Klootwijk.pdf",
+    "bytes": 361306,
+    "sha256": "b51651c007c560775ff1950e278789cd7674e131ec71a09ebd9254cebe9c19ce",
+    "pages": 43,
+    "chars": 92071,
+    "attachments": []
+  },
+  {
+    "id": "ATOM_VALIDATION",
+    "path": "C:\\OMT AC031 Womack remarkable carmack oculus master quest half-life 3 gabecube\\atomOS_v3_6_Kernel_Validation_Texture_Cache.pdf",
+    "bytes": 23099,
+    "sha256": "b7ed304f9c4b6c89405ba6ba0ab3bef5e29fc78e5f11ad3c134333320bf31a48",
+    "pages": 8,
+    "chars": 16999,
+    "attachments": []
+  },
+  {
+    "id": "UGTS",
+    "path": "C:\\Tom Klootwijk super secret substrate club hush hush\\UGTS_KC_3_6_Tom_Klootwijk.pdf",
+    "bytes": 1769281,
+    "sha256": "e21433cd8378368dafe4ae278d3c9c364725e45ae7fd75b743328bd2d6003a46",
+    "pages": 19,
+    "chars": 46887,
+    "attachments": []
+  }
+]

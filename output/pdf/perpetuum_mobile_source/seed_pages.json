@@ -1,0 +1,70 @@
+[
+  {
+    "title": "SEED / Exact digital construction",
+    "label": "10 / PPM-SEED-v1",
+    "blocks": [
+      {
+        "type": "p",
+        "text": "[D] This new reproducibility contract supplies digital initialization and experimental stimuli. H is SHA-256; || is byte concatenation; U16/U64 are unsigned big-endian fields. Every displayed \\0 is a single NUL byte. Lengths count bytes; overflow is rejected."
+      },
+      {
+        "type": "p",
+        "text": "The core seed S is exactly 32 bytes: an integer in [0,2^256), persisted as 64 lowercase hex digits. A decimal adapter accepts canonical ASCII unsigned decimal only. Optional text input uses strict UTF-8, with no normalization, trimming or case folding, and hashes a length-framed string:"
+      },
+      {
+        "type": "eq",
+        "text": "S_text = H(\"PPM/TEXT/v1\\0\" || U64(len(t)) || t)\nm = H(\"PPM/MANIFEST/v1\\0\" || U64(len(C)) || C)\nK = H(\"PPM/SEED/v1\\0\" || S || m)"
+      },
+      {
+        "type": "p",
+        "text": "C is a constrained canonical JSON manifest with exactly nine root fields: <b>schema, family, sub_v, numeric_mode, seed_hex, sources, assets, algorithms, parameters</b>. schema is ppm-seed-v1; seed_hex encodes S. Source/asset lists contain unique, ID-sorted {id,sha256} records. Profile IDs and sampling domains are lower ASCII slash-separated identifiers."
+      },
+      {
+        "type": "p",
+        "text": "Canonical encoding uses UTF-8 without BOM, recursively sorted ASCII keys, no token whitespace and preserved array order. Keys match [a-z][a-z0-9_]*. Values may be null, booleans, Unicode scalar strings, lists or objects. Reject duplicate keys, invalid Unicode, JSON numeric tokens and nonfinite values. Numeric quantities use schema-typed strings. Strings follow RFC 8785 escaping, preserving their Unicode sequence; this is a deliberately restricted subset [R7, R8]."
+      },
+      {
+        "type": "p",
+        "text": "The application schema fixes units, constant representations, initialization, algorithm versions and resource limits. Source/asset hashes bind exact bytes; no field may contain its own manifest/output digest. Host paths and incidental timestamps belong in a receipt unless they affect the mathematics."
+      },
+      {
+        "type": "small",
+        "text": "The embedded seed_reference_v1.py fixes all byte rules, rejects and fixture values. Its generic validator checks seed/manifest structure; a complete application must also resolve referenced contents and validate its own parameters. The custom stream is a new definition, not a standardized random-bit generator or a source of physical randomness."
+      }
+    ]
+  },
+  {
+    "title": "SEED / Streams, evidence and replay",
+    "label": "11 / PPM-SEED-v1",
+    "blocks": [
+      {
+        "type": "eq",
+        "text": "B(d,c) = H(\"PPM/BLOCK/v1\\0\" || K || U16(len(d))\n           || ASCII(d) || U64(c))\nx = unsigned_big_endian(B(d,c)[0:8])\nL = 2^64 - (2^64 mod n)\nadvance c after every draw; accept x < L;\noutput x mod n; otherwise retry"
+      },
+      {
+        "type": "p",
+        "text": "[D] Domain d has 1..65535 ASCII bytes; each slash-separated component matches [a-z0-9_.-]+. Counter c is 0..2^64-1. The u64 sampler consumes one 32-byte block, uses its first eight bytes and discards the rest. For n in 1..2^64, record every rejected draw and advance only that domain. Use arithmetic wide enough to represent 2^64. A next counter equal to 2^64 is terminal and is never hashed. A unit-grid API in a distinct domain returns (x &gt;&gt; 11)*2^-53 in [0,1)."
+      },
+      {
+        "type": "p",
+        "text": "Use stable logical identities and sampling-site names, such as geometry/instance/0/position. Worker IDs and arrival order cannot define random streams. The range mapping removes modulo bias conditional on uniform input words; this does not prove a finite public seed set has perfect statistical distribution."
+      },
+      {
+        "type": "eq",
+        "text": "T0 = H(\"PPM/TRANSCRIPT/v1\\0\" || m\n       || U64(len(X0)) || X0)\nT_(i+1) = H(\"PPM/EVENT/v1\\0\" || T_i || U64(i)\n          || U64(len(E_i)) || E_i)"
+      },
+      {
+        "type": "p",
+        "text": "X0 is exact family-defined initial-state bytes; E_i is a constrained-canonical event object. Record input/measurement content, logical order, draw counters, outcomes and state checkpoints. A receipt binds terminal count and chain head. Replay recomputes transitions and reports the first divergence; an unsigned hash alone establishes neither execution truth nor authorship."
+      },
+      {
+        "type": "p",
+        "text": "<b>Replay modes:</b> exact integer/fixed-point state; explicitly pinned binary64 environment; numerical tolerance with units and exact discrete statuses; or measurement compatibility. Each is a different claim [R22]. Transcendental implementations, operation order and physical sensor novelty require their own records."
+      },
+      {
+        "type": "small",
+        "text": "Physical timestamps, calibration, actual commands and measurements are never regenerated retroactively from a seed. WB uses ties-away rounding; a new fixed-point profile must declare its own rounding. The SEED reference does not implement WB, and adapters must preserve the selected source arithmetic."
+      }
+    ]
+  }
+]

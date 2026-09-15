@@ -1,0 +1,4 @@
+# Preserve the exact bytes referenced by the Perpetuum Mobile integrity records.
+.gitattributes text eol=lf
+output/pdf/*.pdf binary
+output/pdf/perpetuum_mobile_source/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

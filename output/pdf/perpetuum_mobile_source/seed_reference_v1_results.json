@@ -1,0 +1,147 @@
+{
+  "status": "passed",
+  "scope": "new PPM-SEED-v1 local reference checks only",
+  "python": "3.13.11",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "checks_passed": 46,
+  "checks": [
+    "nist_sha256_abc",
+    "sha256_empty",
+    "seed_decimal_hex_equivalence",
+    "seed_max",
+    "seed_negative",
+    "seed_overflow",
+    "seed_whitespace",
+    "seed_leading_zero",
+    "seed_unicode_digit",
+    "seed_uppercase_hex",
+    "text_preserves_unicode_sequence",
+    "text_lone_surrogate",
+    "canonical_key_order",
+    "canonical_string_escaping",
+    "canonical_no_unicode_normalization",
+    "duplicate_keys",
+    "integer_token",
+    "float_token",
+    "negative_zero_token",
+    "nan_token",
+    "bom",
+    "bad_utf8",
+    "invalid_key",
+    "manifest_parser_roundtrip",
+    "manifest_key_order_invariant",
+    "manifest_change_changes_stream",
+    "seed_change_changes_stream",
+    "counter_separation",
+    "domain_separation",
+    "counter_wrap",
+    "empty_domain",
+    "oversized_domain",
+    "range_1",
+    "range_full_width",
+    "range_rejection_boundary",
+    "range_last_accepted",
+    "range_zero",
+    "range_too_large",
+    "range_exhausted",
+    "unit_interval_zero",
+    "unit_interval_upper_endpoint",
+    "unit_interval_discards_low_11_bits",
+    "exhaustive_8bit_all_256_ranges",
+    "transcript_replay",
+    "transcript_event_mutation",
+    "transcript_index_mutation"
+  ],
+  "fixture": {
+    "schema": "ppm-seed-v1",
+    "family": "digital",
+    "sub_v": "reference-1.0.0",
+    "numeric_mode": "u64-mod",
+    "seed_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+    "sources": [],
+    "assets": [],
+    "algorithms": {
+      "sampler": "sha256-counter-v1"
+    },
+    "parameters": {
+      "range_n": "10"
+    }
+  },
+  "canonical_manifest_utf8": "{\"algorithms\":{\"sampler\":\"sha256-counter-v1\"},\"assets\":[],\"family\":\"digital\",\"numeric_mode\":\"u64-mod\",\"parameters\":{\"range_n\":\"10\"},\"schema\":\"ppm-seed-v1\",\"seed_hex\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"sources\":[],\"sub_v\":\"reference-1.0.0\"}",
+  "manifest_prefix_hex": "50504d2f4d414e49464553542f763100",
+  "seed_prefix_hex": "50504d2f534545442f763100",
+  "block_prefix_hex": "50504d2f424c4f434b2f763100",
+  "text_prefix_hex": "50504d2f544558542f763100",
+  "manifest_length": 272,
+  "manifest_digest": "f2d7055b0a5fc0b30c0a5e89e9a449865cc3d32592855b829b634df7a6643b77",
+  "key": "32ab7cdd6e624f91afef400f59ac5a8762526ba4d6ef72b40b344c9aba2b9714",
+  "domain": "geometry/instance/0/position",
+  "domain_length": 28,
+  "block_0_input_hex": "50504d2f424c4f434b2f76310032ab7cdd6e624f91afef400f59ac5a8762526ba4d6ef72b40b344c9aba2b9714001c67656f6d657472792f696e7374616e63652f302f706f736974696f6e0000000000000000",
+  "blocks_0_1_2": [
+    "1bf021f9bb711c5514a3075a26a407c75959e1730dbd5df9e22f2942800b7622",
+    "d0a14fda9e7fa168805bfb8afb27484ad1a53e23b880a0c09fd9ba36c8796257",
+    "2a04b004b30040b75087785dfc816ae36799c4c16eb1046abff0abeaa30712e2"
+  ],
+  "range_10_draws": [
+    {
+      "value": "7",
+      "next_counter": "1",
+      "consumed": "1"
+    },
+    {
+      "value": "6",
+      "next_counter": "2",
+      "consumed": "1"
+    },
+    {
+      "value": "7",
+      "next_counter": "3",
+      "consumed": "1"
+    },
+    {
+      "value": "4",
+      "next_counter": "4",
+      "consumed": "1"
+    },
+    {
+      "value": "8",
+      "next_counter": "5",
+      "consumed": "1"
+    },
+    {
+      "value": "4",
+      "next_counter": "6",
+      "consumed": "1"
+    },
+    {
+      "value": "2",
+      "next_counter": "7",
+      "consumed": "1"
+    },
+    {
+      "value": "7",
+      "next_counter": "8",
+      "consumed": "1"
+    },
+    {
+      "value": "9",
+      "next_counter": "9",
+      "consumed": "1"
+    },
+    {
+      "value": "8",
+      "next_counter": "10",
+      "consumed": "1"
+    }
+  ],
+  "initial_state_hex": "0000000000000000",
+  "transcript_0": "dcfbde3d36d39bbf075680548e2b6476cbc371a1c0d6ca46e60d0a22ef17361e",
+  "event_0": {
+    "counter": "0",
+    "domain": "geometry/instance/0/position",
+    "value": "7"
+  },
+  "transcript_1": "cf18f5171a7e17b3973df8582f9e0180c000d918fd924968d95b7ac1db339041",
+  "reference_source_sha256": "d691c4d0c629c1b433da2e54771bd83da45c9ea751bbea99de4f16fb1925a307"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "scope": "Five byte-framing and SHA-256 comparisons via .NET on same Windows machine",
+  "checks_passed": 5,
+  "powershell_version": "7.6.5",
+  "dotnet_environment_version": "10.0.11",
+  "canonical_fixture_length": 272,
+  "manifest_digest": "f2d7055b0a5fc0b30c0a5e89e9a449865cc3d32592855b829b634df7a6643b77",
+  "key": "32ab7cdd6e624f91afef400f59ac5a8762526ba4d6ef72b40b344c9aba2b9714",
+  "blocks_0_1_2": [
+    "1bf021f9bb711c5514a3075a26a407c75959e1730dbd5df9e22f2942800b7622",
+    "d0a14fda9e7fa168805bfb8afb27484ad1a53e23b880a0c09fd9ba36c8796257",
+    "2a04b004b30040b75087785dfc816ae36799c4c16eb1046abff0abeaa30712e2"
+  ],
+  "script_sha256": "0f112e6c1e48392b73320dd483582e15433a39c45b23b1ef960f7a952f70ffe3"
+}

@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "scope": "new finite mathematical and model calculations only",
+  "checks_passed": 15,
+  "checks": [
+    "H4 exact orthogonality",
+    "H4 determinant",
+    "Unscaled pinion has passive-gain counterexample",
+    "Scaled pinion has contractive singular values",
+    "OTAN2 profile image difference O=0",
+    "OTAN2 profile image difference O=1",
+    "Whole-word sink example",
+    "Mask-narrowing nonmonotonic counterexample",
+    "JK truth table from old state",
+    "Thermal example energy residual",
+    "Thermal times and period reproduce source rounding",
+    "Equal pulse counts retain modeled timing information",
+    "Consensus energy identity and mean preservation",
+    "Illustrative crop-water depletion balance",
+    "Finite reserve runtime bound"
+  ],
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "thermal": {
+    "tau_s": 4.0,
+    "equilibrium_K": 313.15,
+    "first_passage_s": 3.194030784871086,
+    "input_J": 0.31940307848710864,
+    "stored_J": 0.22,
+    "loss_J": 0.09940307848710864,
+    "residual_J": 0.0,
+    "oscillator_period_s": 2.424543214281262,
+    "two_equal_count_sequences_final_K": [
+      297.11523432987485,
+      296.5954024671754
+    ]
+  },
+  "wave": {
+    "phi": 1.618033988749895,
+    "unscaled_amplitude_gain": 1.618033988749895,
+    "unscaled_power_gain": 2.618033988749895,
+    "scaled_singular_values": [
+      1.0,
+      0.3819660112501051,
+      0.6180339887498948,
+      0.6180339887498948
+    ]
+  },
+  "consensus": {
+    "mean": 1.5,
+    "mean_rate": 0.0,
+    "Vdot": -6.0
+  },
+  "illustrative_water_depletion_mm": 36,
+  "reference_source_sha256": "7678014df4228ff2a33cee5f7fb230578fad57a7771182b6f913bcd7f2c5919b"
+}

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "Perpetuum_Mobile_V1_0.md",
+    "bytes": 70686,
+    "sha256": "82ca2f8301eb971cce4ffce7e54e233541c8b53a953e58c8772ca3462ecedcde"
+  },
+  {
+    "name": "content.json",
+    "bytes": 98627,
+    "sha256": "bc395d17b21434c6bac37374d754828352fed4febf4bd123fb065c9594b86b4b"
+  },
+  {
+    "name": "build_pdf.py",
+    "bytes": 9554,
+    "sha256": "3cfcbfd1c73adc346930dce1d65c7833e063bce1201ebcee8c1d532427542e95"
+  },
+  {
+    "name": "source_manifest.json",
+    "bytes": 1335,
+    "sha256": "c53d94c1c80dd6c7320c659e2bfd00a4cd4ae82ef4f8c0e6a6ed21c94904eb12"
+  },
+  {
+    "name": "WANTWOMBAN.pdf",
+    "bytes": 660794,
+    "sha256": "cc0d81471fe33497873faa6339aa487532c8861902761994d3c88b16c17ea662"
+  },
+  {
+    "name": "atomOS_v3.6_Total_Integrated_Engine_Tom_Klootwijk.pdf",
+    "bytes": 361306,
+    "sha256": "b51651c007c560775ff1950e278789cd7674e131ec71a09ebd9254cebe9c19ce"
+  },
+  {
+    "name": "atomOS_v3_6_Kernel_Validation_Texture_Cache.pdf",
+    "bytes": 23099,
+    "sha256": "b7ed304f9c4b6c89405ba6ba0ab3bef5e29fc78e5f11ad3c134333320bf31a48"
+  },
+  {
+    "name": "UGTS_KC_3_6_Tom_Klootwijk.pdf",
+    "bytes": 1769281,
+    "sha256": "e21433cd8378368dafe4ae278d3c9c364725e45ae7fd75b743328bd2d6003a46"
+  },
+  {
+    "name": "seed_reference_v1.py",
+    "bytes": 13097,
+    "sha256": "d691c4d0c629c1b433da2e54771bd83da45c9ea751bbea99de4f16fb1925a307"
+  },
+  {
+    "name": "seed_reference_v1_results.json",
+    "bytes": 4421,
+    "sha256": "648029747a7f40a328307918d5d7932e7bc4490ca61be08f5632d4b4b8412569"
+  },
+  {
+    "name": "seed_reference_v1_crosscheck.ps1",
+    "bytes": 3071,
+    "sha256": "0f112e6c1e48392b73320dd483582e15433a39c45b23b1ef960f7a952f70ffe3"
+  },
+  {
+    "name": "seed_reference_v1_crosscheck_results.json",
+    "bytes": 756,
+    "sha256": "0740c3a63d6557cdd76c2c8734a4f340fcf3f202d9c1bcc538b95f9582dffb65"
+  },
+  {
+    "name": "PPM_SEED_v1_contract.md",
+    "bytes": 14856,
+    "sha256": "7e0a37d33616aa0dd45a9358aef3a151961d0c4846034bb1e30bf7bf9b43c065"
+  },
+  {
+    "name": "formal_checks.py",
+    "bytes": 4269,
+    "sha256": "7678014df4228ff2a33cee5f7fb230578fad57a7771182b6f913bcd7f2c5919b"
+  },
+  {
+    "name": "formal_checks_results.json",
+    "bytes": 1766,
+    "sha256": "f116e2a1eb6397fa88ca41213f321f41223a0c7f42be08ca1a37f4d321eb9b22"
+  },
+  {
+    "name": "write_content.py",
+    "bytes": 68211,
+    "sha256": "bf58c894b2b3bc7a735e3e3199c861cbccba64e8993b23c2f7a57e22181d6732"
+  },
+  {
+    "name": "write_seed_pages.py",
+    "bytes": 4852,
+    "sha256": "fe59940c310f29cb7afc49dc8a81f02c2a679654644265c157d1064db3326ffd"
+  },
+  {
+    "name": "seed_pages.json",
+    "bytes": 5410,
+    "sha256": "6bada3fd6847f1a92f5ea10f058190fe7f1de2d0f701ac0271e0f33fb0951cd1"
+  },
+  {
+    "name": "README.md",
+    "bytes": 1403,
+    "sha256": "72dca1f9f0a4f536fa70f51ecf3d7b951a0b1e577cbba0a559d44808516ce75f"
+  }
+]
