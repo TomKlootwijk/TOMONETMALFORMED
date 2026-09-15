@@ -1,0 +1,33 @@
+test_hadamard_norm_preservation_on_exact_rationals (test_wantwoman.AlgebraTests.test_hadamard_norm_preservation_on_exact_rationals) ... ok
+test_otan2_mix_bijection_at_fixed_occupancy (test_wantwoman.AlgebraTests.test_otan2_mix_bijection_at_fixed_occupancy) ... ok
+test_otan2_strict_has_two_values_exhaustively (test_wantwoman.AlgebraTests.test_otan2_strict_has_two_values_exhaustively) ... ok
+test_parity_is_only_three_low_bits (test_wantwoman.AlgebraTests.test_parity_is_only_three_low_bits) ... ok
+test_pinion_fixed_stages_against_fraction_reference (test_wantwoman.AlgebraTests.test_pinion_fixed_stages_against_fraction_reference) ... ok
+test_rounding_ties (test_wantwoman.AlgebraTests.test_rounding_ties) ... ok
+test_shift_add_product (test_wantwoman.AlgebraTests.test_shift_add_product) ... ok
+test_walsh_involution (test_wantwoman.AlgebraTests.test_walsh_involution) ... ok
+test_field_isolation (test_wantwoman.FieldsTests.test_field_isolation) ... ok
+test_layout_covers_64_bits_without_overlap (test_wantwoman.FieldsTests.test_layout_covers_64_bits_without_overlap) ... ok
+test_modular_negation_exhaustive (test_wantwoman.FieldsTests.test_modular_negation_exhaustive) ... ok
+test_pack_round_trip_random (test_wantwoman.FieldsTests.test_pack_round_trip_random) ... ok
+test_range_checks (test_wantwoman.FieldsTests.test_range_checks) ... ok
+test_sign_extension_exhaustive (test_wantwoman.FieldsTests.test_sign_extension_exhaustive) ... ok
+test_source_inversion_expression_is_identity (test_wantwoman.FieldsTests.test_source_inversion_expression_is_identity) ... ok
+test_toggle_is_not_addition (test_wantwoman.FieldsTests.test_toggle_is_not_addition) ... ok
+test_affine_box_exact_corner_enclosure (test_wantwoman.GeometryAndEncodingTests.test_affine_box_exact_corner_enclosure) ... ok
+test_bitstream_roundtrip_and_padding (test_wantwoman.GeometryAndEncodingTests.test_bitstream_roundtrip_and_padding) ... ok
+test_oscillator_first_order_convergence (test_wantwoman.GeometryAndEncodingTests.test_oscillator_first_order_convergence) ... ok
+test_parent_point_is_not_descendant_bound (test_wantwoman.GeometryAndEncodingTests.test_parent_point_is_not_descendant_bound) ... ok
+test_sigma_delta_exact_conservation (test_wantwoman.GeometryAndEncodingTests.test_sigma_delta_exact_conservation) ... ok
+test_subtree_hull_pruning_sound (test_wantwoman.GeometryAndEncodingTests.test_subtree_hull_pruning_sound) ... ok
+test_kernel_determinism_and_metadata (test_wantwoman.TopologyAndKernelTests.test_kernel_determinism_and_metadata) ... ok
+test_klein_chart_seam_involution_exhaustive (test_wantwoman.TopologyAndKernelTests.test_klein_chart_seam_involution_exhaustive) ... ok
+test_phase_clock_period (test_wantwoman.TopologyAndKernelTests.test_phase_clock_period) ... ok
+test_phase_lut_bit_semantics (test_wantwoman.TopologyAndKernelTests.test_phase_lut_bit_semantics) ... ok
+test_source_polar_involution (test_wantwoman.TopologyAndKernelTests.test_source_polar_involution) ... ok
+test_terminal_root_reset (test_wantwoman.TopologyAndKernelTests.test_terminal_root_reset) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.942s
+
+OK

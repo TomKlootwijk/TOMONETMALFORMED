@@ -1,0 +1,356 @@
+[
+  {
+    "id": 1,
+    "title": "Habitats that inspect and repair themselves",
+    "short_title": "Habitat inspection and repair",
+    "modes": [
+      "digital",
+      "analog",
+      "physical"
+    ],
+    "families": [
+      "V02",
+      "V05",
+      "V06",
+      "V07"
+    ],
+    "scenario": "An unoccupied remote habitat notices that a service panel is warming differently after each equipment cycle. The proposed system sends an inspection robot, compares measurements with the component history, and selects replacement or local repair. After the work, independent observations determine whether service can resume. Every action consumes tracked energy, material, time and remaining component life.",
+    "mechanism": "The new architecture links telemetry, material-memory features and a geometric inspection map to a bounded repair planner. NASA ISAAC demonstrated robotic inspection triggered by synthetic fault telemetry; its fuller manipulator response was not performed in that ISS scenario [A01R1]. Vision-controlled jetting establishes a separate precedent for measuring deposited geometry and correcting subsequent material delivery [A01R2]. PM would connect these capabilities through typed component identities, joint-test requirements and resource budgets. Issued commands enter the record as pending physical events. Acknowledgments and inspection establish what occurred; their absence cannot erase physical effects or justify assuming success.",
+    "source_roles": "PM pages 18-19 supply the proposed temporal material readout; pages 24-25 distinguish planned deposition from material already present. Pages 26-29 connect resource accounting with distributed observations. The UGTS registry supplies component and joint definitions, atomOS supplies admission records, and WANTWOMBAN supplies the powered measurement loop. Page 8 requires recovery from measured physical state after an interrupted command.",
+    "equation": "E_next = E + E_in - E_service - E_repair - E_waste\nrepair_ok = geometry_ok AND joint_ok AND budget_ok\nhistory_next = append(history, observed_work)",
+    "equation_context": "E denotes electrical storage; energy terms are joules. Outgoing terms partition expenditures without counting losses twice. Acceptance flags summarize specified inspections and operating limits, with missing evidence treated as unknown. This is a supervisory contract, not a strength law. A rejected repair retains its material, heat and mechanical consequences.",
+    "loop": [
+      "Detect change",
+      "Inspect and plan",
+      "Perform repair",
+      "Verify and record"
+    ],
+    "demonstrator": "Use a non-crewed enclosure containing a replaceable fan duct, a monitored thermal load and a sacrificial repair coupon. Inject repeatable obstructions and sensor faults, then compare fixed maintenance scheduling with inspection-triggered action. Require an independent camera or gauge to verify the result. Add material only to the coupon until separate bond tests justify expansion. Interrupt one acknowledgment deliberately and evaluate whether the system discovers what physically happened before continuing.",
+    "metrics": [
+      {
+        "measure": "Fault localization",
+        "criterion": "On held-out faults, report detection delay and location error against independent inspection, including missed faults and false dispatches at matched sampling effort."
+      },
+      {
+        "measure": "Repair validity",
+        "criterion": "Accept recovery only when predefined geometric and joint tests pass; report every failed repair, rework action and unresolved outcome across repeated trials."
+      },
+      {
+        "measure": "Resource value",
+        "criterion": "Compare downtime, consumed material and total energy with conventional maintenance under identical faults, counting inspection travel, computation, cleanup and unsuccessful repairs."
+      }
+    ],
+    "failure": "A warm patch can indicate changed airflow, sensor drift or an unrelated load. A visually complete deposit can still have a weak bond. The planner therefore separates diagnosis, action and verification. If their assumptions fail, it preserves the observed damage and repair history and suspends the affected service.",
+    "future": "A larger installation could share repair knowledge across habitats while retaining each site's actual calibration and wear. Modular service corridors could make inspection and replacement easier than repairing inaccessible structures. The transformative possibility is coordinated upkeep without continuous supervision; the decisive unresolved work is reliable physical diagnosis, joint qualification and resource-aware recovery over long missions.",
+    "seed_role": "SEED reproduces synthetic fault schedules, candidate repair geometries and planning comparisons from a pinned manifest. It does not recreate the habitat's damage, wear or sensor readings; those remain measured inputs with timestamps and uncertainty.",
+    "references": [
+      {
+        "id": "A01R1",
+        "title": "NASA: Integrated System for Autonomous and Adaptive Caretaking",
+        "url": "https://www.nasa.gov/integrated-system-for-autonomous-and-adaptive-caretaking-isaac/",
+        "support": "Robotic inspection combined with vehicle telemetry and coordinated execution.",
+        "boundary": "The cited ISS obstruction scenario did not include manipulator repair."
+      },
+      {
+        "id": "A01R2",
+        "title": "Buchner et al.: Vision-controlled jetting for composite systems and robots",
+        "url": "https://www.nature.com/articles/s41586-023-06684-3",
+        "support": "Measured print geometry informs subsequent deposition.",
+        "boundary": "This is manufacturing evidence, not autonomous habitat repair validation."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Robot skin that computes through its material",
+    "short_title": "Material-computing robot skin",
+    "modes": [
+      "analog",
+      "physical",
+      "digital"
+    ],
+    "families": [
+      "V02",
+      "V03",
+      "V07"
+    ],
+    "scenario": "A gripper touches an unfamiliar object. Instead of reducing each contact to an instantaneous pressure value, the proposed skin retains a fading trace of pressure and temperature changes. That physical history helps a trained readout distinguish a steady hold from repeated rubbing or emerging slip, while a separate controller decides whether and how to adjust the grip.",
+    "mechanism": "Pressure sensors would drive a nearby material-memory layer through calibrated electrical or optical signals. Tan and colleagues demonstrated pressure encoding and integration using an optoelectronic spiking architecture and photomemristors [A02R1]. Du and colleagues demonstrated dynamic-memristor temporal processing with a software readout [A02R2]. The proposed skin combines these component ideas with replaceable sensing patches and explicit preparation procedures. Each patch emits normalized features, uncertainty and age; a digital readout estimates contact class. Local actuation consumes that estimate only through a separately validated policy, rather than treating a classifier score as mechanical authority.",
+    "source_roles": "PM pages 18-19 define material memory, readout training and comparisons against memoryless sensing. Pages 20-21 separate surface kinematics from force and actuator laws. UGTS contributes patch identities, compatibility and ordered geometry; atomOS records admitted commands and old/new logical state. WANTWOMBAN contributes calibrated readback and retained material history. Pages 28-29 address stale information when patches share observations.",
+    "equation": "tau_i * zdot_i = -z_i + F_i(p,T,h)\nI_i = Read(z_i,p,T; calibration)\ny_hat = W_out * [1; Normalize(I)]",
+    "equation_context": "Here z is a dimensionless fitted memory state, p pressure in pascals, T temperature in kelvin, and I measured current. Positive tau sets a fitted response time. This relaxation model is a local surrogate; material history h and the functions F and Read require device-specific characterization.",
+    "loop": [
+      "Sense contact",
+      "Evolve material",
+      "Read memory",
+      "Adjust and verify"
+    ],
+    "demonstrator": "Mount four replaceable patches on a stationary gripper fixture and record synchronized pressure, current and independent contact video. Apply steady presses, ordered taps and controlled lateral motion across held-out objects. Train the readout before evaluating those objects. Compare material features with raw instantaneous sensing and a digital temporal baseline. Repeat after bending the carrier and changing ambient conditions within the characterized range, while retaining identical task definitions and recording preparation time.",
+    "metrics": [
+      {
+        "measure": "Temporal discrimination",
+        "criterion": "Measure held-out contact-class error against independent video labels, comparing memoryless and digital temporal baselines with identical sensors, tasks and data splits."
+      },
+      {
+        "measure": "Operating drift",
+        "criterion": "Report calibration change and prediction error after repeated bending and thermal cycles; predefined limits determine when a patch must undergo recalibration."
+      },
+      {
+        "measure": "System burden",
+        "criterion": "Count sensing, encoding, material stimulation, readout, training and preparation energy together; require any claimed advantage to survive the full matched-task comparison."
+      }
+    ],
+    "failure": "Material memory can retain irrelevant contacts, drift with temperature or change after deformation. Read pulses may disturb the state being measured. A failed patch must become unavailable rather than silently clear. Grip adjustments remain bounded by independent force and position observations, and a digital reset does not reset the material automatically.",
+    "future": "A distributed computing skin could mix fast electrical memory with slower thermal channels, allowing different patches to specialize in contact history and environmental change. Patches might exchange compact features while keeping raw evidence for uncertain events. The remaining challenge is durable, calibratable computation under real deformation, with a useful overall benefit after electronics and maintenance are included.",
+    "seed_role": "SEED fixes contact sequences, learning splits and digital probe masks for comparisons. Physical initialization still requires a measured preparation procedure; equal seeds cannot guarantee equal conductance, temperature, deformation or contact history across patches.",
+    "references": [
+      {
+        "id": "A02R1",
+        "title": "Tan et al.: Tactile sensory coding and learning with bio-inspired optoelectronic spiking afferent nerves",
+        "url": "https://www.nature.com/articles/s41467-020-15105-2",
+        "support": "Pressure sensing, optical spike encoding and photomemristor integration.",
+        "boundary": "No validation of this proposed deforming robot skin or grip controller."
+      },
+      {
+        "id": "A02R2",
+        "title": "Du et al.: Reservoir computing using dynamic memristors for temporal information processing",
+        "url": "https://www.nature.com/articles/s41467-017-02337-y",
+        "support": "Experimental material dynamics used for temporal processing.",
+        "boundary": "Software readout and specific devices; not a universal material law."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "A workshop table that becomes its own tooling",
+    "short_title": "A table that becomes tooling",
+    "modes": [
+      "digital",
+      "physical",
+      "analog"
+    ],
+    "families": [
+      "V01",
+      "V03",
+      "V05"
+    ],
+    "scenario": "An operator places an irregular component on a flat workbench. The proposed table scans it, raises selected supports and forms a cradle for inspection or light assembly. Where the actuated surface cannot supply the needed feature, a dispenser adds a removable fixture. The table measures contact and loading before presenting the arrangement as usable tooling.",
+    "mechanism": "A height-actuated array with compliant contact pads provides a changing support surface. MIT's inFORM demonstrated shape-based affordances, constraints and object actuation [A03R1]; it does not establish machining-grade fixtures. PM would add calibrated load sensing, a constrained support planner and optional fixture deposition. The planner first solves for attainable heights, then tests contact under the intended load. Orthogonal Hadamard probe patterns can identify small local response changes, but cannot establish nonlinear strength. A deposited fixture becomes part of the obstruction and cleanup model even when its support test fails.",
+    "source_roles": "PM pages 16-17 provide reproducible target geometry and persistent edit identity. Pages 20-21 connect ordered UGTS hinges with calibrated actuation, loading and probe patterns. Pages 24-25 describe guarded deposition and retained physical history. atomOS supplies proposal and disposition records, while WANTWOMBAN supplies the measured feedback pattern. Page 13 requires physical conformance beyond a successful geometric calculation.",
+    "equation": "z_star = argmin_z ||A*z - h_target||^2\nsubject to z_min<=z<=z_max\naccept_support = geometry_ok AND all(f_i<=f_limit_i)\nE_in = integral(sum_i V_i*I_i) dt",
+    "equation_context": "Pin heights z and target heights h are metres; A is a calibrated dimensionless interpolation. After placement, measured forces f in newtons must pass limits for the intended load. Voltage and current determine electrical energy. Feasible geometry alone does not certify stiffness, friction or adhesion.",
+    "loop": [
+      "Scan component",
+      "Form support",
+      "Test contact",
+      "Work and inspect"
+    ],
+    "demonstrator": "Build a small replaceable pin or tile array for metrology and light assembly, with force sensing and an independent pose camera. Test a fixed library of irregular coupons, including shapes absent from calibration. Compare adjustable manual supports with automatically generated cradles. Add one removable fixture only after measuring its material response. Track setup time, pose drift and cleanup, and deliberately fail one support test to check that the obstruction remains recorded.",
+    "metrics": [
+      {
+        "measure": "Fixture accuracy",
+        "criterion": "Measure component pose and drift under predefined light loads, using independent metrology and held-out shapes; report every geometry accepted outside tolerance."
+      },
+      {
+        "measure": "Setup effort",
+        "criterion": "Compare complete setup and removal time with conventional adjustable supports, including scanning, calibration, failed attempts, deposited material curing and required cleanup."
+      },
+      {
+        "measure": "Useful reuse",
+        "criterion": "Count successful reconfigurations before recalibration or replacement, and report energy, consumables and surface damage per accepted fixture across the same workload."
+      }
+    ],
+    "failure": "Sparse supports can concentrate stress, and a good height match can hide slipping or weak attachment. Friction, compliance and sensor offsets change with use. The table must withhold acceptance when measured support differs from its model, preserving actual contact geometry and deposited material while returning to a tested recovery state.",
+    "future": "The same architecture could grow into configurable inspection benches, adaptive assembly stations and molds for carefully qualified processes. A robot might request a fixture by function and receive a measured capability record instead of assuming a universal work surface. The hardest extension is supporting larger forces while preserving reliable contact models and economical maintenance between tasks.",
+    "seed_role": "SEED recreates the target fixture family, probe sequence and planning comparison. Measured component shape, pin calibration, wear and deposited fixtures remain external state; the seed specifies a requested support, not its demonstrated load capacity.",
+    "references": [
+      {
+        "id": "A03R1",
+        "title": "Follmer et al.: inFORM - Dynamic Physical Affordances and Constraints through Shape and Object Actuation",
+        "url": "https://www.media.mit.edu/publications/inform-dynamic-physical-affordances-and-constraints-through-shape-and-object-actuation/",
+        "support": "Shape displays can provide changing constraints and actuate objects.",
+        "boundary": "The work does not qualify load-bearing tooling or deposited fixtures."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "A programmable optical nervous system",
+    "short_title": "Programmable optical signal network",
+    "modes": [
+      "analog",
+      "digital",
+      "physical"
+    ],
+    "families": [
+      "V04",
+      "V02",
+      "V07"
+    ],
+    "scenario": "A sensing instrument needs different signal combinations as its task changes. The proposed optical network physically routes coherent inputs, mixes their amplitudes and sends selected outputs to detectors. When a path drifts, the controller measures the change and searches for another configuration. Its changing connections resemble a nervous system functionally, without implying biological cognition or autonomous understanding.",
+    "mechanism": "Tunable interferometers form the physical mixing network, while electronic drivers set phase and coupling. Programmable silicon meshes have demonstrated multiple optical functions [A04R1], and later work demonstrated feedback-based characterization, routing and configuration [A04R2]. PM would represent every usable channel, calibration and failed element in one typed graph. A bounded compiler fits a requested forward transfer matrix to measured device behavior. Coherent detectors verify amplitude and phase; power-only readout cannot certify signed arithmetic. Commands remain proposals until the settled device has been measured, and reconfiguration consumes recorded electrical energy.",
+    "source_roles": "PM pages 22-23 define the wave architecture and the passive realization constraint for WANTWOMBAN's numerical pinion. H4 supplies a concrete orthogonal mixing target; atomOS Boolean XOR is a different operation. UGTS contributes compatible ports and ordered maps. Pages 28-29 add distributed observation age and command history. The proposed compiler must preserve these boundaries rather than treating graph edges as fabricated waveguides.",
+    "equation": "b(omega) = S_fwd(omega;theta,T)*a(omega)\nS_target = diag(phi,1/phi,1,-1)*H4/phi\nS_fwd^dagger*S_fwd <= I",
+    "equation_context": "Amplitudes a and b are power-normalized, in square-root watts, across four inputs and four outputs. Tuning is held fixed during measurement. The golden ratio phi scales the pinion to a contractive target. Reflection, reverse transmission and loss ports remain separate parts of the physical account.",
+    "loop": [
+      "Specify transform",
+      "Tune bounded mesh",
+      "Measure transfer",
+      "Accept or reroute"
+    ],
+    "demonstrator": "Calibrate a four-input, four-output optical bench or mesh, including phase references, loss and tuner settling. Implement H4 and the scaled pinion, then probe basis vectors and previously unseen coherent superpositions. Introduce a bounded tuning offset or disable one path. Compare recalibration and alternative routing against a fixed configuration. Count detector, laser, control and tuning energy, and retain unsuccessful searches instead of reporting only configurations that converged.",
+    "metrics": [
+      {
+        "measure": "Transform fidelity",
+        "criterion": "Measure complex matrix error on held-out coherent inputs over the declared bandwidth, retaining phase uncertainty, insertion loss and all rejected configurations."
+      },
+      {
+        "measure": "Reconfiguration recovery",
+        "criterion": "After a predefined path disturbance, report time and measured success rate for restoring the target within tolerance, including searches that never converge."
+      },
+      {
+        "measure": "Complete cost",
+        "criterion": "Compare useful task output with a digital baseline while counting lasers, detectors, calibration, tuning and conversion; claim benefit only within tested workloads."
+      }
+    ],
+    "failure": "Phase drift, thermal crosstalk or a missing reference can invalidate a previously good transform. A passive network cannot supply the unscaled pinion's maximum amplitude gain. The controller must report unavailable channels or a failed fit, and must not relabel attenuation compensation in software as physical amplification.",
+    "future": "A larger network could link sensor arrays to specialized material-memory stages, routing signals according to measured task needs and device health. Distributed instruments might exchange compact configuration descriptions while keeping local calibration authoritative. The unresolved questions are stable inverse tuning, scalable monitoring and whether the complete optical-electronic system improves a useful objective under realistic drift and conversion costs.",
+    "seed_role": "SEED reproduces probe vectors, optimizer initialization and digital routing choices. Optical phase, temperature, fabrication offsets and detector noise remain measured state. Repeating the seed alone does not recreate the same physical transfer matrix.",
+    "references": [
+      {
+        "id": "A04R1",
+        "title": "Perez et al.: Multipurpose silicon photonics signal processor core",
+        "url": "https://www.nature.com/articles/s41467-017-00714-1",
+        "support": "Experimental programmable waveguide routing and linear transformations.",
+        "boundary": "No validation of the PM compiler or its pinion mapping."
+      },
+      {
+        "id": "A04R2",
+        "title": "Perez-Lopez et al.: Multipurpose self-configuration of programmable photonic circuits",
+        "url": "https://www.nature.com/articles/s41467-020-19608-w",
+        "support": "Measured feedback used for characterization, routing and configuration.",
+        "boundary": "Component experiments do not guarantee convergence for arbitrary requested transforms."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Remote manufacturing from a \"construction seed\"",
+    "short_title": "Manufacturing from a construction seed",
+    "modes": [
+      "digital",
+      "physical",
+      "analog"
+    ],
+    "families": [
+      "V01",
+      "V05",
+      "V07"
+    ],
+    "scenario": "A remote workshop receives a compact construction package for a replacement support. It resolves the exact rulebook, checks available material and measures the installation site. The proposed system regenerates a design, adapts only permitted dimensions, manufactures the support and returns evidence of its actual geometry and tested interfaces. The package coordinates construction; it does not supply matter.",
+    "mechanism": "A construction seed selects a design inside a versioned bounded grammar; the manifest binds geometry, materials, joints and acceptance procedures. NASA ARMADAS provides ground evidence of autonomous assembly from discrete structural blocks [A05R1]. Vision-controlled jetting provides a separate measured-deposition approach [A05R2]. PM would make these alternative manufacturing adapters consume the same typed intent while retaining different physical laws. Each accepted operation references measured predecessor geometry and available resources. A failed joint or interrupted command remains in the site history, and local measurements determine whether to continue, rework or request another design.",
+    "source_roles": "PM pages 11-12 define exact SEED framing, manifests and replay. Pages 16-17 preserve generated object identity and edits. Pages 24-25 require actual deposition and support status to remain distinct; pages 28-29 address remote command acknowledgment. UGTS supplies grammar and relation records, atomOS supplies admission bookkeeping, and WANTWOMBAN contributes the explicit command-to-measurement boundary rather than an automatic fabrication law.",
+    "equation": "plan = Generate(seed, manifest, measured_site)\naccept_j = geometry_j AND joint_test_j AND resource_j\nmass_next = mass_prev + mass_added - mass_removed",
+    "equation_context": "The manifest fixes the generator and permitted adaptations; measured site data are explicit inputs. Acceptance flags carry their evidence and unknown status. Mass terms are kilograms of the tracked part, with added retained material distinguished from feedstock waste. Identical plans do not establish identical physical parts.",
+    "loop": [
+      "Resolve package",
+      "Adapt to site",
+      "Build bounded step",
+      "Inspect and accept"
+    ],
+    "demonstrator": "Use two workstations and one instrumented assembly or printing cell. Send a seed package for several small support variants, including a declared fit adjustment based on local scanning. Regenerate the nominal plan independently before building. Test dimensions and joints with independent gauges or witness coupons. Interrupt a transfer and an acknowledgment, then check restart behavior. Compare package size, setup effort and accepted-part cost with ordinary model-file delivery under identical production constraints.",
+    "metrics": [
+      {
+        "measure": "Digital agreement",
+        "criterion": "Require independent regeneration to match canonical geometry and operation identities from the same complete manifest, with the first divergence recorded when inputs differ."
+      },
+      {
+        "measure": "Physical acceptance",
+        "criterion": "Evaluate held-out parts against declared dimensional and joint tests, reporting rejects and rework separately; a matching design hash cannot replace these measurements."
+      },
+      {
+        "measure": "Delivery value",
+        "criterion": "Compare total transmitted bytes, setup time and accepted-part resources with ordinary model delivery, including rulebook distribution, calibration, local adaptations and failed builds."
+      }
+    ],
+    "failure": "An unavailable generator version, substituted material or stale site scan can invalidate the package. A completed command with a lost acknowledgment can otherwise be repeated physically. The receiver therefore resolves content before planning, assigns operation identities, and reconciles actual work before retrying or accepting an adapted continuation.",
+    "future": "Qualified construction packages could support remote maintenance fleets, modular infrastructure and local manufacture of specialized tools. A shared grammar might reduce repeated design transmission when many variants use the same rules. Expansion requires interoperable calibration, reliable joint evidence and controlled adaptation; an arbitrary object cannot be assumed recoverable from a small seed without its defining information.",
+    "seed_role": "The seed chooses reproducible variants and operation sequences within a pinned design family. Material supply, machine calibration, site measurements and physical deviations belong in separate records. Source identity and authorship metadata do not substitute for those records.",
+    "references": [
+      {
+        "id": "A05R1",
+        "title": "NASA: Robot Team Builds High-Performance Digital Structure",
+        "url": "https://www.nasa.gov/general/robot-team-builds-high-performance-digital-structure-for-nasa/",
+        "support": "Ground demonstration of coordinated autonomous structural block assembly.",
+        "boundary": "This does not establish deployed space construction or construction-seed semantics."
+      },
+      {
+        "id": "A05R2",
+        "title": "Buchner et al.: Vision-controlled jetting for composite systems and robots",
+        "url": "https://www.nature.com/articles/s41586-023-06684-3",
+        "support": "Geometric feedback during material deposition.",
+        "boundary": "Distinct manufacturing process; no guaranteed correspondence between different physical adapters."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "VR environments with physical, moving geometry",
+    "short_title": "VR with moving physical geometry",
+    "modes": [
+      "digital",
+      "physical",
+      "analog"
+    ],
+    "families": [
+      "V01",
+      "V03",
+      "V07"
+    ],
+    "scenario": "A virtual workshop contains a shelf, a railing and a shaped workpiece. The proposed room moves tracked physical proxies into selected contact locations so the user can touch real surfaces. As the virtual layout changes, the system schedules reachable rearrangements and verifies their actual poses. Visual continuity never becomes permission to assume that physical geometry has teleported.",
+    "mechanism": "Mobile or height-actuated proxies provide a limited physical vocabulary that a virtual scene can reuse. RoomShift demonstrated furniture-moving robots for room-scale haptics [A06R1], while HapticBots explored multiple moving, shape-changing contact proxies [A06R2]. PM would add persistent virtual identities, bounded physical mapping and explicit contact-readiness records. A planner predicts upcoming interactions, reserves movement corridors and issues commands only within the characterized tracking and stopping envelope. The renderer obtains readiness from measured pose and settled motion, not from the command queue. Unreachable contacts receive a different interaction rather than fabricated physical support.",
+    "source_roles": "PM pages 16-17 supply reproducible virtual geometry, stable identities and edits. Pages 20-21 distinguish an ordered hinge model from the mechanics of moving furniture or proxies. Pages 28-29 preserve observation age and interrupted-command history. UGTS supplies compatible contact mappings; atomOS records proposals and readiness. WANTWOMBAN contributes calibrated feedback, while page 8 prevents digital rollback from erasing real motion.",
+    "equation": "d_clear >= d_stop + e_tracking + v_rel*latency\nproxy_target = Map(virtual_contact, calibrated_room)\ncontact_ready = pose_ok AND settled AND tracked",
+    "equation_context": "Distances are metres; v_rel bounds relative closing speed throughout latency in seconds. d_stop bounds remaining relative closing distance during stopping, including continued user motion. Tracking error and stopping behavior require measured bounds. This simplified corridor condition needs geometry-specific verification; it cannot alone guarantee collision avoidance.",
+    "loop": [
+      "Predict contact",
+      "Reserve and move",
+      "Verify readiness",
+      "Render interaction"
+    ],
+    "demonstrator": "Begin with a seated, bounded interaction area and two small tracked proxies, using an independent tracker and measured stopping behavior. Reproduce a fixed virtual task with and without physical rearrangement. Test contact alignment before introducing users, then evaluate only characterized motions and loads. Inject delayed tracking and an interrupted command to examine readiness handling. Log virtual targets, actual trajectories, contacts and unavailable interactions, including time spent waiting for physical movement.",
+    "metrics": [
+      {
+        "measure": "Contact alignment",
+        "criterion": "Measure physical-to-virtual contact error and readiness delay over held-out layouts, using independent tracking and reporting contacts withheld because alignment was unavailable."
+      },
+      {
+        "measure": "Motion handling",
+        "criterion": "Across predefined latency and interruption trials, verify declared stopping and readiness behavior from measured trajectories, counting every violated bound and uncertain outcome."
+      },
+      {
+        "measure": "Interaction value",
+        "criterion": "Compare task performance and reported experience with fixed props under identical virtual tasks, including waiting, unavailable contacts, setup effort and actuator noise."
+      }
+    ],
+    "failure": "Tracking loss or delayed motion can put a proxy somewhere other than its virtual counterpart. Furniture can retain momentum after a software pause. The interaction must become unavailable when readiness assumptions fail, and recovery must use the measured room state rather than replaying old movement commands or restoring virtual coordinates.",
+    "future": "Larger spaces could reuse configurable walls, work surfaces and lightweight props for design review, training or remote collaboration. Seeded scenes could share a virtual plan while each room solves its own physical realization. The hardest boundary is consistent interaction across different geometries, motion limits and tracking conditions without concealing unsupported contact or imposing excessive rearrangement delays.",
+    "seed_role": "SEED recreates virtual layouts and proposed interaction sequences. Each room retains its own dimensions, proxy inventory, calibration and measured motion. A shared seed therefore synchronizes digital intent, while contact readiness remains a local physical decision.",
+    "references": [
+      {
+        "id": "A06R1",
+        "title": "Suzuki et al.: RoomShift - Room-scale Dynamic Haptics for VR with Furniture-moving Swarm Robots",
+        "url": "https://ryosuzuki.org/roomshift/",
+        "support": "Demonstrated furniture-moving robots as physical VR proxies.",
+        "boundary": "Not a guarantee of arbitrary room layouts or unrestricted human contact."
+      },
+      {
+        "id": "A06R2",
+        "title": "HapticBots: Distributed Encountered-type Haptics for VR with Multiple Shape-changing Mobile Robots",
+        "url": "https://arxiv.org/abs/2108.10829",
+        "support": "Research prototype with moving and shape-changing haptic proxies.",
+        "boundary": "Does not validate PM mapping, readiness or cross-room replay contracts."
+      }
+    ]
+  }
+]

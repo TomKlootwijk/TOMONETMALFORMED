@@ -1,0 +1,18 @@
+{
+  "scope": "Editorial completeness, PDF structure, glyph margins and embedded-byte integrity only; no new physical application validation.",
+  "edition": "Frontier Applications A1.0",
+  "pdf": "Perpetuum_Mobile_Frontier_Applications_A1_0.pdf",
+  "sha256": "8a2506a35bfdc316f6c96827293663b7a964d6932985e89ac659ea4f4f517bca",
+  "pages": 56,
+  "applications": 18,
+  "bookmarks": 56,
+  "text_witness_checks": 945,
+  "glyph_margin_violations": 0,
+  "attachments": 18,
+  "attachment_hash_checks": 17,
+  "base_pdf_pages": 38,
+  "base_pdf_nested_attachments": 20,
+  "citation_ids": 25,
+  "cited_ids_resolved": 25,
+  "result": "pass"
+}

@@ -1,0 +1,10 @@
+{
+  "format": "raw bits, most-significant bit first, right zero padding",
+  "valid_bits": 4096,
+  "time_step_s": 0.0078125,
+  "samples_per_second": 128.0,
+  "polar_occupancy.bin": "P64 log-polar membership stream, strict0 OTAN2",
+  "oscillator_sigma_delta.bin": "pulse-density encoding of clipped (x+1)/2",
+  "P64_profile": "WANTWOMAN-P64-v1; Klein chart seam; 128-entry triangle LUT",
+  "source_of_numbers": "synthetic oscillator and explicit demonstration design constants"
+}

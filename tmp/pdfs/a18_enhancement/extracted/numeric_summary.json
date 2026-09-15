@@ -1,0 +1,39 @@
+{
+  "rows": [
+    [
+      "Check / maximum held-out relative L2 error",
+      "Executed result"
+    ],
+    [
+      "Mathematical and software checks",
+      "44 passed"
+    ],
+    [
+      "Scalar decoding only",
+      "15.976844%"
+    ],
+    [
+      "Four-factor calibration",
+      "0.063294%"
+    ],
+    [
+      "Specified drift; old calibration",
+      "1.375459%"
+    ],
+    [
+      "Specified drift; refreshed calibration",
+      "0.051705%"
+    ],
+    [
+      "Largest refreshed numerical decoder gain",
+      "1.908980"
+    ],
+    [
+      "Held-out complex vectors",
+      "6"
+    ]
+  ],
+  "interpretation": "Calibration improves these six held-out vectors because the chosen perturbations closely match the row-factor model. The drift case demonstrates why retaining an old calibration is insufficient. These percentages are finite synthetic errors, not measured hardware accuracy or a statistical confidence interval.",
+  "energy_text": "Illustration only: setup energy 2 mJ, complete hybrid read cost 3 microjoules per task and digital cost 5 microjoules per task give strict break-even at 1,001 reused tasks. Under these chosen values, requalification every 800 tasks removes the advantage; a 2,000-task interval permits it. Actual values must be measured.",
+  "source_receipt_sha256": "70fffc3dcc39e52786e7a81f0d55eb69eca124a778680a1f80eabf5a213a6efc"
+}

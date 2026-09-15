@@ -1,0 +1,112 @@
+[
+  {
+    "page": 1,
+    "title": "A18 / Wave-and-material computer",
+    "bottom_content_y": 251.39
+  },
+  {
+    "page": 2,
+    "title": "What changes when A18 is made precise",
+    "bottom_content_y": 293.69
+  },
+  {
+    "page": 3,
+    "title": "A machine with three interacting parts",
+    "bottom_content_y": 212.19
+  },
+  {
+    "page": 4,
+    "title": "The input-to-result contract",
+    "bottom_content_y": 321.19
+  },
+  {
+    "page": 5,
+    "title": "Material memory has its own dynamics",
+    "bottom_content_y": 333.29
+  },
+  {
+    "page": 6,
+    "title": "Compile the source transform into passive hardware",
+    "bottom_content_y": 330.79
+  },
+  {
+    "page": 7,
+    "title": "Recover the field, including its phase",
+    "bottom_content_y": 369.99
+  },
+  {
+    "page": 8,
+    "title": "Calibrate the transformation that exists",
+    "bottom_content_y": 389.59
+  },
+  {
+    "page": 9,
+    "title": "Program, verify, then admit a read block",
+    "bottom_content_y": 326.29
+  },
+  {
+    "page": 10,
+    "title": "Enhance service life and useful availability",
+    "bottom_content_y": 343.09
+  },
+  {
+    "page": 11,
+    "title": "Attach a usable error bound to the result",
+    "bottom_content_y": 317.89
+  },
+  {
+    "page": 12,
+    "title": "An executed four-channel numerical example",
+    "bottom_content_y": 259.19
+  },
+  {
+    "page": 13,
+    "title": "When retaining a program could pay off",
+    "bottom_content_y": 377.79
+  },
+  {
+    "page": 14,
+    "title": "Build a demonstrator that answers a question",
+    "bottom_content_y": 316.49
+  },
+  {
+    "page": 15,
+    "title": "Extend it from stored settings to signal memory",
+    "bottom_content_y": 313.79
+  },
+  {
+    "page": 16,
+    "title": "Cross-domain embodiments that earn their differences",
+    "bottom_content_y": 318.59
+  },
+  {
+    "page": 17,
+    "title": "Futuristic uses with an actual computation inside",
+    "bottom_content_y": 319.19
+  },
+  {
+    "page": 18,
+    "title": "Bind A18 to the supplied framework",
+    "bottom_content_y": 322.19
+  },
+  {
+    "page": 19,
+    "title": "What qualifies as an A18 result",
+    "bottom_content_y": 340.49
+  },
+  {
+    "page": 20,
+    "title": "Research basis / 1",
+    "bottom_content_y": 248.69
+  },
+  {
+    "page": 21,
+    "title": "Research basis / 2",
+    "bottom_content_y": 365.19
+  },
+  {
+    "page": 22,
+    "title": "Provenance and reproducible package",
+    "bottom_content_y": 405.39
+  }
+]

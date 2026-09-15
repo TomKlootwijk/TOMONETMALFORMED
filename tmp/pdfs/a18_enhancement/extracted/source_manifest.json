@@ -1,0 +1,23 @@
+{
+  "edition": "A18 Definition and Enhanced Architecture R1.0",
+  "framework_author": "Tom Klootwijk",
+  "author_identifier": "NL200678942",
+  "companion": {
+    "filename": "Perpetuum_Mobile_Frontier_Applications_A1_0.pdf",
+    "relative_path": "../Perpetuum_Mobile_Frontier_Applications_A1_0.pdf",
+    "pages": 56,
+    "sha256": "8a2506a35bfdc316f6c96827293663b7a964d6932985e89ac659ea4f4f517bca",
+    "repository_commit": "b2c3fb239bd3572d95080440ad35b843dbc6b6b4"
+  },
+  "pm_content": {
+    "filename": "pm_content.json",
+    "sha256": "bc395d17b21434c6bac37374d754828352fed4febf4bd123fb065c9594b86b4b",
+    "origin": "Exact PM 1.0 content.json"
+  },
+  "normative_pm": {
+    "edition": "PM 1.0",
+    "pages": 38,
+    "location": "Nested attachment in the companion",
+    "sha256": "b6532f9638e6cca77d75c2636a54afb5daf587a4e69aceff72102384252a5a55"
+  }
+}

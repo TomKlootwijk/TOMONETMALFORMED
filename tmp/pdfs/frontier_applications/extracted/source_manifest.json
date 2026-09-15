@@ -1,0 +1,23 @@
+{
+  "edition": "Frontier Applications A1.0",
+  "framework_author": "Tom Klootwijk",
+  "author_identifier": "NL200678942",
+  "base_specification": {
+    "filename": "Perpetuum_Mobile_Tom_Klootwijk_V1_0.pdf",
+    "relative_path": "../Perpetuum_Mobile_Tom_Klootwijk_V1_0.pdf",
+    "sha256": "b6532f9638e6cca77d75c2636a54afb5daf587a4e69aceff72102384252a5a55",
+    "pages": 38,
+    "repository_commit": "ea9941d084ca5cd59c55e96145989a78ab6d22a5"
+  },
+  "conversation_reply": {
+    "filename": "original_reply.md",
+    "sha256": "48de58ee743d06fb7234ef19fa5bcfb5ae1e5a1a4e563bc1b436e2cd05eaba40",
+    "origin": "assistant reply immediately preceding the user request to document and expand it"
+  },
+  "image": {
+    "filename": "assets/frontier_cover.png",
+    "sha256": "352b57de68b8fb0db818976208c15a1761976651dc4257e2e0f498e13dddf644",
+    "prompt": "imagegen_prompt.md",
+    "status": "AI-generated concept illustration"
+  }
+}

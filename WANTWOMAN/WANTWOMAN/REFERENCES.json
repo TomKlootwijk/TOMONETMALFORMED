@@ -1,0 +1,98 @@
+[
+  {
+    "key": "S0",
+    "title": "Tom Klootwijk, supplied 21-page source artifact",
+    "publisher": "User upload",
+    "url": null,
+    "use": "Architecture, terminology, equations and pseudocode; preserved unchanged.",
+    "accessed": null
+  },
+  {
+    "key": "M1",
+    "title": "Notes on Introductory Point-Set Topology",
+    "publisher": "Allen Hatcher, Cornell University",
+    "url": "https://pi.math.cornell.edu/~hatcher/Top/TopNotes.pdf",
+    "use": "Klein bottle quotient construction, pp. 44–45.",
+    "accessed": "2026-09-15"
+  },
+  {
+    "key": "U1",
+    "title": "The International System of Units: Defining constants",
+    "publisher": "BIPM",
+    "url": "https://www.bipm.org/en/measurement-units/si-defining-constants",
+    "use": "Exact SI defining-constant values.",
+    "accessed": "2026-09-15"
+  },
+  {
+    "key": "P1",
+    "title": "The Feynman Lectures on Physics I.9: Newton’s Laws of Dynamics",
+    "publisher": "Caltech",
+    "url": "https://www.feynmanlectures.caltech.edu/I_09.html",
+    "use": "Newtonian dynamics.",
+    "accessed": "2026-09-15"
+  },
+  {
+    "key": "P2",
+    "title": "The Feynman Lectures on Physics I.23: Resonance",
+    "publisher": "Caltech",
+    "url": "https://www.feynmanlectures.caltech.edu/I_23.html",
+    "use": "Forced and damped oscillator.",
+    "accessed": "2026-09-15"
+  },
+  {
+    "key": "P3",
+    "title": "The Feynman Lectures on Physics II.19: The Principle of Least Action",
+    "publisher": "Caltech",
+    "url": "https://www.feynmanlectures.caltech.edu/II_19.html",
+    "use": "Variational mechanics.",
+    "accessed": "2026-09-15"
+  },
+  {
+    "key": "P4",
+    "title": "The Feynman Lectures on Physics I.43: Diffusion",
+    "publisher": "Caltech",
+    "url": "https://www.feynmanlectures.caltech.edu/I_43.html",
+    "use": "Diffusion and heat-flux constitutive relations.",
+    "accessed": "2026-09-15"
+  },
+  {
+    "key": "P5",
+    "title": "The Feynman Lectures on Physics II.18: The Maxwell Equations",
+    "publisher": "Caltech",
+    "url": "https://www.feynmanlectures.caltech.edu/II_18.html",
+    "use": "Maxwell equations, charge conservation and Lorentz force.",
+    "accessed": "2026-09-15"
+  },
+  {
+    "key": "P6",
+    "title": "The Feynman Lectures on Physics III.16: The Dependence of Amplitudes on Position",
+    "publisher": "Caltech",
+    "url": "https://www.feynmanlectures.caltech.edu/III_16.html",
+    "use": "Schrödinger equation, section 16–5.",
+    "accessed": "2026-09-15"
+  },
+  {
+    "key": "P7",
+    "title": "The Feynman Lectures on Physics I.15: The Special Theory of Relativity",
+    "publisher": "Caltech",
+    "url": "https://www.feynmanlectures.caltech.edu/I_15.html",
+    "use": "Special-relativistic dynamics.",
+    "accessed": "2026-09-15"
+  },
+  {
+    "key": "P8",
+    "title": "Lecture Notes on General Relativity",
+    "publisher": "Sean M. Carroll, arXiv:gr-qc/9712019",
+    "url": "https://arxiv.org/abs/gr-qc/9712019",
+    "use": "Einstein equation and geodesic equation; SI factors restored in document.",
+    "accessed": "2026-09-15"
+  },
+  {
+    "key": "A1",
+    "title": "AquaCrop: Calculation scheme",
+    "publisher": "FAO",
+    "url": "https://www.fao.org/aquacrop/overview/calculation-scheme/en/",
+    "use": "Crop-canopy/transpiration/biomass framework and well-watered transpiration relation.",
+    "accessed": "2026-09-15"
+  }
+]

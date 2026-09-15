@@ -1,0 +1,65 @@
+{
+  "edition": "WANTWOMAN 1.0",
+  "data_kind": "synthetic benchmark, not experimental observations",
+  "python_version": "3.13.5",
+  "steps": 4096,
+  "time_step_s": 0.0078125,
+  "duration_s": 32.0,
+  "fixed_point_fraction_bits": 24,
+  "oscillator_mass_kg": 1,
+  "spring_constant_N_per_m": 1,
+  "initial_position_m": 1,
+  "initial_momentum_kg_m_per_s": 0,
+  "max_abs_position_error_m": 0.003984097176482384,
+  "max_abs_momentum_error_kg_m_per_s": 8.262053704030659e-05,
+  "max_abs_energy_error_J": 0.0019611612774070863,
+  "max_modified_energy_error_J": 6.874413192026196e-07,
+  "sigma_delta_residual_integer": 4967501,
+  "sigma_delta_mean_error": 7.228665344882756e-05,
+  "sigma_delta_mean_error_bound": 0.000244140625,
+  "occupancy_ones": 2398,
+  "stream_valid_bits": 4096,
+  "bytes_per_stream": 512,
+  "rational_clock_period_s": 6.28125,
+  "physical_oscillator_period_s": 6.283185307179586,
+  "clock_period_relative_error": 0.0003080137040323832,
+  "age_on_edition_date": 36,
+  "civil_days_from_1990_07_10_to_2026_07_10": 13149,
+  "constants": {
+    "phi": "1.61803398874989484820458683436563811772030917980576286213545",
+    "phi_q16": "1.6180267333984375",
+    "inverse_phi_q16": "0.6180267333984375",
+    "phi_q16_absolute_error": "0.00000725535145734820458683436563811772030917980576286213545",
+    "inverse_phi_q16_absolute_error": "0.000007255351457348204586834365638117720309179805762862135448",
+    "pinion_fixed_diagonal_product": "0.99998377659358084201812744140625",
+    "golden_step_11_bits": 782,
+    "golden_step_10_bits": 391,
+    "golden_angle_radians": 2.399963229728653,
+    "golden_angle_11bit_radians": 2.399145952253143,
+    "golden_angle_11bit_error_radians": 0.0008172774755101919
+  },
+  "convergence": [
+    {
+      "h": 0.015625,
+      "max_abs_x_error_over_8_s": 0.007892952674788494
+    },
+    {
+      "h": 0.0078125,
+      "max_abs_x_error_over_8_s": 0.0039266522905966215
+    },
+    {
+      "h": 0.00390625,
+      "max_abs_x_error_over_8_s": 0.001958688641722813
+    }
+  ],
+  "first_word_hex": "2A22D3EF039080B3",
+  "last_word_hex": "43599C16FAC00A73",
+  "files_sha256": {
+    "oscillator_sigma_delta.bin": "97a33674a52144393b636a47169f4fa41820d3b2cd09536f1fda96c2b78917fb",
+    "polar_lut.csv": "8144e3902d21c685d6cdf768c3fcb2699867529028a444c594a307295ad10b95",
+    "polar_occupancy.bin": "2ff7f9c5339f0d39e21e60dfb0a0aacce77a6c32bb9e8b55c8ee5e95babd7b89",
+    "stream_metadata.json": "4cbea84b0ece6f7f70e9c3134d20c819c3ac609cfdde7e4a574bff0a08e43887",
+    "trace.csv": "d1d8b25ef2e5c8fdeef29cfae1b8fb844c0fc7fc9c63ff8481537ad448edd7d7",
+    "word_fields.csv": "f5d6ac80e5ccd41e9fdbf90f4172d9c26f02edd91c2e148d684c19a20b985a94"
+  }
+}

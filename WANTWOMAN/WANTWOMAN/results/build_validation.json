@@ -1,0 +1,13 @@
+{
+  "title": "WANTWOMAN",
+  "physical_pages": 24,
+  "pdf_page_size": "A4",
+  "clickable_links": 63,
+  "latex_overfull_boxes": 0,
+  "latex_undefined_references": 0,
+  "visual_review": "All pages rendered using pdftoppm and inspected in contact sheets; key equation pages reviewed at larger scale.",
+  "text_boundary_or_replacement_glyph_warnings": 0,
+  "tests_passed": 28,
+  "source_copy_sha256": "0fddbd55ba01bad0c94b435ddf89c4b778e8a94776946f6cc60cfbed860c5116",
+  "delivered_pdf_sha256": "e56462324e7e3c1762c5a5a193abfda3a77b2db8dd46bf747bbad7a38e87af6e"
+}

@@ -1,0 +1,331 @@
+[
+  {
+    "id": 13,
+    "title": "Infrastructure with distributed physical memory",
+    "short_title": "Infrastructure that retains recent loads",
+    "modes": [
+      "Analog sensing",
+      "Physical memory",
+      "Digital coordination"
+    ],
+    "families": [
+      "V02",
+      "V07"
+    ],
+    "scenario": "A bridge carries replaceable sensing modules that retain short histories of local strain and temperature. During a communication outage, each module continues recognizing unusual sequences and preserves selected event records. After reconnection, engineers receive a spatially organized account of recent loading, sensor uncertainty and maintenance needs. This proposed memory layer supplements conventional structural assessment.",
+    "mechanism": "Distributed fibre sensing and digital twins have already monitored real railway bridges [A13R1]. Separately, dynamic memristors have demonstrated temporal information processing [A13R2]. The proposed integration converts calibrated strain signals into bounded electrical stimuli for local memory cells. Their relaxation provides short temporal features; a digital logger retains durable event records. A trained readout distinguishes specified loading patterns, then neighboring modules exchange timestamped summaries. Temperature compensation, preparation history and drift remain explicit inputs. Neither a cell's retained state nor an anomaly score directly measures crack size or structural capacity.",
+    "source_roles": "PM pages 18-19 supply the V02 material-state/readout separation and comparisons against memoryless sensors. Pages 28-29 supply V07 message identity, stale-data limits and local operation. UGTS locates each module and its calibration lineage; atomOS records admitted samples and outcomes. The WANTWOMBAN feedback pattern supplies the observation cycle through a strain adapter, rather than treating its colour model as structural mechanics.",
+    "equation": "dh_i/dt = -h_i/tau_i + k_i*abs(deps_i/dt)\ny_i = W_i*[1; h_i; normalized_temperature_i]\ntau_i > 0",
+    "equation_context": "This is a proposed local fading-memory surrogate, not a universal memristor law. Strain eps and memory h are dimensionless; tau is seconds and k is dimensionless. Measured device responses must justify its operating range. Durable damage estimates require a separate validated structural model.",
+    "loop": [
+      "Sense local strain",
+      "Retain features",
+      "Compare histories",
+      "Schedule inspection"
+    ],
+    "demonstrator": "Instrument a laboratory beam at four positions using independent strain gauges and temperature references. Feed recorded loading sequences into replaceable memory modules while logging raw signals centrally. Hold out complete loading sessions for evaluation. Introduce communication interruptions and sensor offsets, then compare memoryless, digital recurrent and material-memory readouts under equal sampling budgets. Independent beam measurements determine whether reported events correspond to actual imposed changes, rather than sensor artefacts.",
+    "metrics": [
+      {
+        "measure": "Held-out event recognition",
+        "criterion": "Match a preregistered detection target and false-alarm limit on unseen loading sessions, including temperature shifts and repeated device preparations."
+      },
+      {
+        "measure": "Outage record completeness",
+        "criterion": "Recover every locally committed event identifier after the specified outage, with timestamps, uncertainty and explicitly recorded missing raw samples."
+      },
+      {
+        "measure": "Total monitoring cost",
+        "criterion": "Compare energy, communication volume and maintenance effort against conventional sensing at matched detection quality, including memory preparation and readout."
+      }
+    ],
+    "failure": "Seasonal drift can resemble accumulated loading, while relaxed memory can erase a relevant event before transmission. A disconnected or saturated sensor may remain electrically plausible. Recovery therefore marks uncertain intervals and requests conventional inspection when the calibrated interpretation fails; local confidence never authorizes an unsupported structural capacity claim.",
+    "future": "A larger installation could maintain a map of component histories across bridges, tunnels or industrial frames, selecting inspections where independent evidence is weakest. The decisive research question is whether physical temporal features reduce communication and power enough to justify replacement, calibration and drift management. Field endurance and engineering interpretation remain separate qualification tasks.",
+    "seed_role": "SEED fixes synthetic loading libraries, experiment ordering and evaluation splits. Real strain, temperature, communication interruptions and memory preparation remain recorded inputs. Replaying the same seed reconstructs the stimulus plan, not the bridge's past physical state.",
+    "references": [
+      {
+        "id": "A13R1",
+        "title": "Cambridge: Staffordshire Bridges long-term monitoring",
+        "url": "https://www.cdbb.cam.ac.uk/research/digital-built-environment/staffordshire-bridges-long-term-performance-monitoring-using",
+        "support": "Installed fibre sensors, continuous acquisition and digital-twin analysis on real bridges.",
+        "boundary": "Does not demonstrate distributed material-memory modules or autonomous structural diagnosis."
+      },
+      {
+        "id": "A13R2",
+        "title": "Du et al.: Reservoir computing using dynamic memristors",
+        "url": "https://www.nature.com/articles/s41467-017-02337-y",
+        "support": "Measured dynamic devices provide temporal features for computational tasks.",
+        "boundary": "Laboratory component evidence does not establish infrastructure durability or structural capacity inference."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Greenhouses that coordinate survival and maintenance",
+    "short_title": "Greenhouses coordinating crops and repairs",
+    "modes": [
+      "Physical cultivation",
+      "Digital prediction",
+      "Resource scheduling"
+    ],
+    "families": [
+      "V06",
+      "V07"
+    ],
+    "scenario": "A greenhouse coordinates crop conditions with the condition of its pumps, screens, lamps and water stores. When equipment degrades, the controller adjusts the cultivation schedule and reserves resources for repair. The proposed system keeps a finite crop mission inside declared operating limits while showing growers which biological, mechanical or resource assumptions have become uncertain.",
+    "mechanism": "Wageningen's AGROS trials use crop and climate models, sensor feedback and digital-twin decisions for cucumber cultivation; some crop actions still require greenhouse staff [A14R1]. The proposed extension adds equipment-state estimates and maintenance scheduling to that control loop. Root-zone water, air conditions and storage levels constrain candidate actions. A fault changes the available actuator set and the forecast, rather than merely raising an alert. Local controllers retain a characterized fallback during network loss. Crop response, disease and component degradation require separate fitted models and observations.",
+    "source_roles": "PM pages 26-27 provide V06 resource balances, mission horizons and degraded operating modes. Pages 28-29 provide V07 acknowledged commands and stale-observation rules. UGTS represents beds, pipes and replaceable devices with versioned connections; atomOS records competing schedules and committed actions. WANTWOMBAN contributes a measured actuation/readback pattern, while crop physiology and irrigation physics enter through independently calibrated domain adapters with their own units.",
+    "equation": "dW_root/dt = irrigation - uptake - evaporation - drainage\nC_T*dT/dt = Q_light + Q_heat - Q_vent - Q_loss\nP_lamps + P_pumps + P_service <= P_available",
+    "equation_context": "W_root is root-zone water mass, with flows in kilograms per second. Uptake enters plant storage; transpiration is a separate plant loss. C_T is effective thermal capacity and Q terms are watts for a declared boundary. The electrical budget is instantaneous. Crop stress and maintenance require additional models.",
+    "loop": [
+      "Observe crop/plant",
+      "Predict constraints",
+      "Allocate resources",
+      "Check intervention"
+    ],
+    "demonstrator": "Use two small cultivation zones with independently measured irrigation, drainage, temperature and electrical consumption. Establish normal operating envelopes before introducing bounded disturbances. First emulate pump failure with a water-only bench; then test approved reduced-capacity schedules on a finite crop trial. Compare ordinary climate control with the proposed maintenance-aware scheduler. Record manual actions and crop observations explicitly, and assess both plant-condition outcomes and equipment recovery over the same declared horizon.",
+    "metrics": [
+      {
+        "measure": "Environmental service continuity",
+        "criterion": "Keep independently measured crop-zone variables within preregistered limits during the specified disturbance set, with all excursions reported by duration."
+      },
+      {
+        "measure": "Resource balance closure",
+        "criterion": "Reconcile water and electrical inputs, storage changes and outputs within declared measurement uncertainty throughout cultivation, fallback operation and maintenance."
+      },
+      {
+        "measure": "Maintenance scheduling value",
+        "criterion": "Compare recovery time, crop outcomes and resource use against ordinary control under matched faults, including human intervention and replacement costs."
+      }
+    ],
+    "failure": "A biased moisture sensor can produce confident but harmful irrigation recommendations, while maintenance may consume capacity needed for cooling. Biological deterioration can also exceed a climate model's assumptions. The scheduler must expose uncertainty, preserve independent observations and invoke the declared grower intervention when crop or equipment models cease to apply.",
+    "future": "Cooperating greenhouses could share heat, water-treatment capacity and maintenance resources while retaining local crop authority. Their schedules would negotiate real resource ports and delivery uncertainty, not exchange abstract promises of surplus. The open challenge is demonstrating useful coordination across weather, crop stages, equipment faults and changing biological conditions over repeated seasons.",
+    "seed_role": "SEED generates reproducible weather scenarios, simulated equipment faults and controller comparisons. Actual weather, crop development, maintenance completion and valve acknowledgments remain external evidence. Seeds support controlled comparison without claiming that living plants are reproducibly initialized digital objects.",
+    "references": [
+      {
+        "id": "A14R1",
+        "title": "WUR: Digital Twin controls cucumber cultivation",
+        "url": "https://edepot.wur.nl/712043",
+        "support": "A reported cultivation trial links models and sensors to climate, irrigation and staff pruning instructions.",
+        "boundary": "Does not demonstrate the proposed equipment-repair scheduler or autonomous handling of every biological disturbance."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Clothing with a changing mechanical response",
+    "short_title": "Clothing with adjustable resistance",
+    "modes": [
+      "Mechanical material",
+      "Pneumatic actuation",
+      "Digital interaction"
+    ],
+    "families": [
+      "V03",
+      "V01"
+    ],
+    "scenario": "A sleeve or costume panel changes its resistance to bending during an interactive performance or simulated task. Flexible motion and deliberate mechanical cues alternate under measured pressure and pose. The proposed garment expresses a digital environment through a calibrated physical response, with user release and comfort constraints built into the interaction rather than inferred from animation.",
+    "mechanism": "Caltech researchers demonstrated interlocking structured fabrics whose bending stiffness changes when boundary pressure jams their particles [A15R1]. The proposed garment packages small replaceable panels with pressure sensing, pose measurement and controlled venting. Commands select a characterized stiffness range; they do not prescribe arbitrary forces independently of motion and load. A digital scene requests interaction cues through that constrained adapter. Fabric geometry, membrane leakage and loading history alter the response, so each panel needs calibration. The component evidence establishes tunable material behavior, not a completed wearable interaction system.",
+    "source_roles": "PM pages 20-21 separate geometric hinges from actuator effort, load and mechanical energy in V03. Pages 16-17 provide V01 scene identity and editable interaction state. UGTS locates panel frames and connections; atomOS records command admission and actual acknowledgments. WANTWOMBAN supplies the feedback architecture, but a pneumatic pressure/flow model explicitly replaces its thermal decoder. The garment's physical pose remains independently observed.",
+    "equation": "tau_resist = -k(p,h)*(q-q0) - b(p,h)*dq/dt\nk(p,h) >= 0; b(p,h) >= 0\nP_mech = tau_resist*dq/dt",
+    "equation_context": "This local joint surrogate uses angle q in radians, torque in newton metres and pressure difference p in pascals. History h represents calibrated jamming behavior. Changing stiffness can exchange stored energy, so nonnegative k and b alone do not prove passivity during pressure changes.",
+    "loop": [
+      "Read pose/pressure",
+      "Request scene cue",
+      "Admit resistance",
+      "Measure response"
+    ],
+    "demonstrator": "Start with one panel on an articulated dress form driven through repeatable bending trajectories. Measure torque, angle, pressure, electrical consumption and venting time independently. Characterize flexible, intermediate and stiff settings before connecting a simple digital interaction. Compare requested cues with actual resistance under repeated cycles, small leaks and communication interruptions. Keep garment fit and later user evaluation as separate stages; the initial experiment measures calibrated mechanical interaction on the bench.",
+    "metrics": [
+      {
+        "measure": "Mechanical cue accuracy",
+        "criterion": "Meet preregistered torque-versus-angle error limits across held-out trajectories, pressures and loading histories, with repeated calibration and uncertainty estimates included."
+      },
+      {
+        "measure": "Release response time",
+        "criterion": "Return to the characterized low-resistance state within the declared interval after release requests, power loss and tested communication failures."
+      },
+      {
+        "measure": "Garment system burden",
+        "criterion": "Measure panel mass, pump energy, acoustic noise and heat during matched tasks, comparing the complete assembly with fixed-stiffness alternatives."
+      }
+    ],
+    "failure": "A leaking membrane can weaken a cue; trapped pressure or jammed particles can delay release. Pose error may place resistance at an unintended point in motion. The implementation therefore requires measured release behavior and a directly accessible venting mechanism; a digital scene reset cannot establish that the fabric has relaxed.",
+    "future": "Multiple panels could form costumes, haptic sleeves or adjustable equipment straps whose response follows an editable scene. Scaling would require load-sharing models, washable packaging, replaceable membranes and reliable release under realistic wear. The decisive question is whether a useful range of mechanical cues survives those practical constraints with acceptable bulk, noise and energy.",
+    "seed_role": "SEED reproduces digital cue sequences and bench motion schedules. Pressure, fabric history, fit and measured torque remain physical inputs. An identical interaction seed therefore reproduces requested cues only; actual resistance requires its own calibrated comparison and trace.",
+    "references": [
+      {
+        "id": "A15R1",
+        "title": "Wang et al.: Structured fabrics with tunable mechanical properties",
+        "url": "https://authors.library.caltech.edu/records/t74qg-92f12",
+        "support": "Experiments demonstrate reversible pressure-controlled stiffening of interlocking structured fabrics.",
+        "boundary": "Does not qualify a finished garment, medical application, impact protection or unrestricted user contact."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Planetary equipment that manufactures its own fixtures",
+    "short_title": "Planetary tools making task fixtures",
+    "modes": [
+      "Physical fabrication",
+      "Robotic assembly",
+      "Digital geometry"
+    ],
+    "families": [
+      "V05",
+      "V07",
+      "V01",
+      "V06"
+    ],
+    "scenario": "A planetary work station encounters a sample or instrument that its standard gripper cannot hold securely. It scans the contact geometry, proposes a bounded fixture, manufactures it from accounted feedstock and checks its fit before use. The proposal concerns replaceable task accessories, with finite material and power reserves, rather than a machine reproducing every part of itself.",
+    "mechanism": "NASA demonstrated printing an uplinked ratchet-wrench design aboard the space station, with the specimen reserved for testing [A16R1]. NASA's ARMADAS separately demonstrated autonomous modular assembly in a terrestrial laboratory [A16R2]. The proposed integration combines measured geometry, constrained fixture generation, fabrication and robotic installation. A contact model determines acceptable shape and load; witness checks determine whether the manufactured part meets that contract. Ground demonstrations and orbital printing support components, while planetary dust, thermal cycling, gravity and feedstock quality remain unresolved environmental qualifications.",
+    "source_roles": "PM pages 24-25 provide V05 deposition history, inspection and support admission. Pages 28-29 add V07 command acknowledgment and recovery from partial action. V01 on pages 16-17 supplies bounded editable geometry, while V06 on pages 26-27 accounts for mission resources. UGTS binds the fixture's lineage and interfaces; atomOS distinguishes proposed geometry from inspected hardware. WANTWOMBAN contributes measured process feedback through a manufacturing adapter.",
+    "equation": "m_next = m_stock - m_fixture - m_waste\nE_next = E_store + E_in - E_fabricate - E_other\ntask_load <= calibrated_fixture_limit",
+    "equation_context": "Mass terms use kilograms and energy terms joules over one production interval. The load limit is obtained from a declared material, process and test method, not topology alone. Geometry fit, gripping stability and environmental endurance require separate checks before the fixture receives an accepted-use status.",
+    "loop": [
+      "Scan task interface",
+      "Generate fixture",
+      "Fabricate/inspect",
+      "Install and verify"
+    ],
+    "demonstrator": "Build a terrestrial bench with a scanner, one polymer printer and a robot that handles instrument surrogates. Predeclare a small family of gripping fixtures and loads. Generate variants from measured interface geometry, print witness specimens and verify dimensional fit and mechanical response independently. Introduce bounded print defects and interrupted installation acknowledgments. Compare fixture production with a stocked set of conventional adapters, accounting for consumed material, energy, time and failed parts.",
+    "metrics": [
+      {
+        "measure": "Verified task completion",
+        "criterion": "Complete the declared handling tasks with independently checked fit and load limits, recording rejected fixtures and every manual intervention required."
+      },
+      {
+        "measure": "Mission resource accounting",
+        "criterion": "Reconcile stock, finished parts, waste and electrical consumption within measurement uncertainty, including inspection, rejected builds and interrupted production attempts."
+      },
+      {
+        "measure": "Recovery after interruption",
+        "criterion": "Resume from measured hardware state after tested print or installation interruptions, without duplicate commands or silently accepting partially completed fixtures."
+      }
+    ],
+    "failure": "A geometrically accurate fixture can still contain weak bonds, residual stress or contamination. A robot may also lose track of whether installation completed. Recovery must retain partially manufactured and attached objects in the physical scene, and require renewed inspection when material evidence or command acknowledgment is incomplete.",
+    "future": "A later station could recycle selected accessories and manufacture supports for cameras, inspection heads or maintenance tasks. Any local-resource feedstock would introduce extraction, sorting, processing and contamination contracts with their own energy costs. The decisive gap is reliable fabrication and verification under the actual planetary environment, especially when replacement sensors and actuators remain externally supplied.",
+    "seed_role": "SEED makes candidate geometry searches and simulated placement trials reproducible. Actual scans, feedstock batches, fabrication measurements and installed states remain external records. Repeated seeds select the same proposed fixture only when the complete descriptor and inputs also match.",
+    "references": [
+      {
+        "id": "A16R1",
+        "title": "NASA: Space-station printer builds a ratchet wrench",
+        "url": "https://www.nasa.gov/missions/station/space-station-3-d-printer-builds-ratchet-wrench-to-complete-first-phase-of-operations/",
+        "support": "An uplinked design was manufactured in orbit during a technology demonstration.",
+        "boundary": "The reported wrench was reserved for ground testing; this was not autonomous planetary fixture qualification."
+      },
+      {
+        "id": "A16R2",
+        "title": "NASA: Robot team builds a digital structure",
+        "url": "https://www.nasa.gov/general/robot-team-builds-high-performance-digital-structure-for-nasa/",
+        "support": "Three robots autonomously assembled a structure from modular blocks in a laboratory demonstration.",
+        "boundary": "Ground assembly does not establish planetary fabrication, raw-material extraction or complete machine reproduction."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Machines that test their own design alternatives",
+    "short_title": "Machines testing candidate designs",
+    "modes": [
+      "Digital experiment design",
+      "Physical testing",
+      "Feedback fabrication"
+    ],
+    "families": [
+      "V01",
+      "V05",
+      "V07"
+    ],
+    "scenario": "A manufacturing cell investigates several replaceable gripper pads or structural inserts before selecting one for a defined task. It generates permitted designs, makes specimens, measures performance and updates its next experiment. The proposed autonomy remains inside a bounded design family and resource budget, with the objective, exclusions and acceptance procedure fixed before the search begins.",
+    "mechanism": "Boston University's BEAR combined automated fabrication and mechanical experiments with Bayesian selection of subsequent designs [A17R1]. The proposed PM extension makes each candidate a typed, versioned object and connects test evidence to an explicit deployment guard. A predictive model ranks candidates using measured outcomes and uncertainty; fabrication and testing supply new evidence. Simulation can screen designs but cannot overwrite contradictory measurements. The search optimizes a specified task metric within its admitted family, rather than proving that its winner is globally optimal or suitable for untested uses.",
+    "source_roles": "PM pages 16-17 give V01 bounded grammar expansion, editable candidate identity and replay. Pages 24-25 give V05 fabrication history and independent inspection. V07 on pages 28-29 tracks asynchronous tests and interrupted operations. UGTS preserves parentage, material and interface contracts; atomOS records candidate admission and committed outcomes. WANTWOMBAN contributes the observed feedback cycle through explicit force, displacement and process-measurement adapters.",
+    "equation": "a_next = argmax_a acquisition(a | measured_data)\na in allowed_designs; experiment_cost(a) <= budget\nscore(a) = measured_task_value(a) - stated_penalties",
+    "equation_context": "The acquisition rule is a declared algorithm balancing predicted value and uncertainty. Scores and penalties must have compatible units or explicit normalization. Cost may be a constrained resource vector rather than a scalar. These definitions specify experiment selection; they do not establish model accuracy or optimality.",
+    "loop": [
+      "Choose candidate",
+      "Make specimen",
+      "Measure task value",
+      "Update evidence"
+    ],
+    "demonstrator": "Choose one printable pad geometry with two adjustable dimensions and one material. Automate fabrication, specimen identification and a repeatable compression or gripping test using independently calibrated instruments. Predeclare the search budget and evaluation rule. Compare adaptive selection with a grid and seeded random search under equal total resources. Retest finalists on held-out loads and fresh material batches, including repeat specimens that estimate manufacturing variability before any deployment decision.",
+    "metrics": [
+      {
+        "measure": "Search efficiency",
+        "criterion": "Reach the preregistered held-out performance target using fewer total resources than baseline searches, counting failed fabrication, calibration and repeated specimens."
+      },
+      {
+        "measure": "Independent finalist performance",
+        "criterion": "Confirm selected designs on fresh batches and unseen loads using separate evaluation data, with uncertainty and unsuccessful replications explicitly reported."
+      },
+      {
+        "measure": "Evidence lineage completeness",
+        "criterion": "Trace every accepted score to its exact design, material, instrument calibration, raw measurement and comparison rule, including exclusions and interruptions."
+      }
+    ],
+    "failure": "The search can exploit an instrument artefact, an easy test condition or a flaw in the scoring function. Manufacturing drift can make older evidence misleading. Independent finalist evaluation, calibrated reference specimens and fixed exclusions are therefore part of the experiment contract; an improving training score alone cannot admit a deployed design.",
+    "future": "Several cells could share compatible evidence and choose complementary experiments while preserving local material and instrument differences. Transfer between machines would require a measured relation between their processes, rather than merging scores with identical labels. The decisive research question is whether the added contract and lineage machinery improves reproducibility and useful discoveries at the total system level.",
+    "seed_role": "SEED records initial candidate sets, randomized baselines and tie-break choices. Physical measurements and failed builds remain immutable observations. Adaptive decisions replay only with those same observations, algorithm versions and ordering; the seed cannot regenerate experimental truth.",
+    "references": [
+      {
+        "id": "A17R1",
+        "title": "Gongora et al.: A Bayesian experimental autonomous researcher",
+        "url": "https://open.bu.edu/handle/2144/42909",
+        "support": "Automated experiments and Bayesian optimization explored a defined mechanical design family.",
+        "boundary": "Does not establish unrestricted machine redesign, global optimality or qualification for arbitrary deployed tasks."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Combined wave-and-material computers",
+    "short_title": "Wave processing with retained material state",
+    "modes": [
+      "Photonic propagation",
+      "Material memory",
+      "Digital calibration"
+    ],
+    "families": [
+      "V04",
+      "V02"
+    ],
+    "scenario": "An instrument processes optical signals through a programmable wave network whose settings are retained in material cells. Fast propagation performs a selected transformation; slower material updates change its response between tasks. The proposed PM system joins these timescales in one recorded configuration, aiming to reduce repeated conversion or reprogramming for a tightly specified sensing or computation workload.",
+    "mechanism": "An integrated photonic tensor core has demonstrated convolutional processing using phase-change memory arrays and optical frequency combs [A18R1]. This is direct component evidence for combining waves and retained material states. The proposed extension adds PM's typed routing, explicit calibration and task-dependent update contracts. A physical cell sets a measured optical response; the digital controller writes, verifies and selects configurations. Fast reads and slower writes have different energy and disturbance budgets. Optical power readout and coherent amplitude readout remain distinct, so the chosen architecture must specify which quantities it computes.",
+    "source_roles": "PM pages 22-23 give V04 power-normalized wave ports, transfer calibration and passive scaling of the pinion. Pages 18-19 give V02 material history, preparation and measured readout. UGTS connects typed optical and programming ports; atomOS records accepted configurations and calibration identities. WANTWOMBAN supplies an optional four-channel target with explicit scaling and coherent readout; volume preservation does not imply optical gain.",
+    "equation": "b(omega) = S(omega; g,T)*a(omega)\ndg/dt = F(g,u_write,T); y = CoherentReadout(b;reference)\nS^dagger*S <= I  [passive, fixed configuration]",
+    "equation_context": "Here a and b are complex power-normalized amplitudes, g material state and T temperature. This proposed baseline measures phase and amplitude against a calibrated coherent reference. Passivity applies at fixed configuration with appropriate ports. Writing or time modulation requires additional accounting; intensity-only detection does not recover this output.",
+    "loop": [
+      "Program material",
+      "Verify transfer",
+      "Process wave input",
+      "Check drift/error"
+    ],
+    "demonstrator": "Use a small programmable optical matrix with independently measured input/output channels, a stable phase reference, coherent receivers and verified material preparation. Program a limited set of transformations, probe basis inputs and held-out combinations, then repeat after idle periods and temperature changes. Measure write, read, conversion and control energy separately. Compare with a conventional electronic implementation at matched task error, including calibration downtime and failed programming attempts rather than reporting optical propagation time alone.",
+    "metrics": [
+      {
+        "measure": "Task-level numerical agreement",
+        "criterion": "Meet a preregistered transformation-error limit on held-out inputs across the stated bandwidth and temperature range, preserving explicit readout and scaling conventions."
+      },
+      {
+        "measure": "Retention and disturbance",
+        "criterion": "Bound transfer drift after specified idle periods and read counts, measuring write variability, recalibration frequency and irreversible device changes separately."
+      },
+      {
+        "measure": "Complete computation efficiency",
+        "criterion": "Compare energy and latency at matched accuracy against electronics, including sources, detectors, converters, programming, cooling and digital orchestration for every task."
+      }
+    ],
+    "failure": "Material drift can change the transfer matrix while a digital configuration remains unchanged. Read pulses may disturb memory, and loss or detector saturation can conceal errors. Recalibration must therefore use independent optical observations and invalidate stale settings. A correct seed or configuration hash cannot certify the current physical transform.",
+    "future": "Coupling retained weights with volatile nonlinear cells could produce wave-and-material temporal processors that adapt between tasks. Their useful memory, numerical stability and programming endurance would require direct measurement. The decisive question is whether combining propagation and material history improves a complete workload after conversion, calibration and thermal management costs are included, rather than merely moving arithmetic between physical domains.",
+    "seed_role": "SEED fixes benchmark inputs, initialization targets and experimental ordering. Actual material states, optical phases, noise and drift require measurements. Exact replay applies to digital commands and recorded inputs; physical transformation agreement uses an explicitly calibrated numerical tolerance.",
+    "references": [
+      {
+        "id": "A18R1",
+        "title": "Feldmann et al.: Integrated photonic tensor core",
+        "url": "https://www.nature.com/articles/s41586-020-03070-1",
+        "support": "Demonstrates photonic in-memory convolution using phase-change arrays and optical frequency combs.",
+        "boundary": "Does not establish the proposed PM controller, arbitrary transforms or universal total-system efficiency advantages."
+      }
+    ]
+  }
+]

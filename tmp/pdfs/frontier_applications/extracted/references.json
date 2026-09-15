@@ -1,0 +1,195 @@
+[
+  {
+    "ids": [
+      "A01R1"
+    ],
+    "title": "NASA: Integrated System for Autonomous and Adaptive Caretaking",
+    "url": "https://www.nasa.gov/integrated-system-for-autonomous-and-adaptive-caretaking-isaac/",
+    "support": "Robotic inspection combined with vehicle telemetry and coordinated execution.",
+    "boundary": "The cited ISS obstruction scenario did not include manipulator repair."
+  },
+  {
+    "ids": [
+      "A01R2",
+      "A05R2",
+      "A09R1"
+    ],
+    "title": "Buchner et al.: Vision-controlled jetting for composite systems and robots",
+    "url": "https://www.nature.com/articles/s41586-023-06684-3",
+    "support": "Measured print geometry informs subsequent deposition.",
+    "boundary": "This is manufacturing evidence, not autonomous habitat repair validation."
+  },
+  {
+    "ids": [
+      "A02R1"
+    ],
+    "title": "Tan et al.: Tactile sensory coding and learning with bio-inspired optoelectronic spiking afferent nerves",
+    "url": "https://www.nature.com/articles/s41467-020-15105-2",
+    "support": "Pressure sensing, optical spike encoding and photomemristor integration.",
+    "boundary": "No validation of this proposed deforming robot skin or grip controller."
+  },
+  {
+    "ids": [
+      "A02R2",
+      "A13R2"
+    ],
+    "title": "Du et al.: Reservoir computing using dynamic memristors for temporal information processing",
+    "url": "https://www.nature.com/articles/s41467-017-02337-y",
+    "support": "Experimental material dynamics used for temporal processing.",
+    "boundary": "Software readout and specific devices; not a universal material law."
+  },
+  {
+    "ids": [
+      "A03R1"
+    ],
+    "title": "Follmer et al.: inFORM - Dynamic Physical Affordances and Constraints through Shape and Object Actuation",
+    "url": "https://www.media.mit.edu/publications/inform-dynamic-physical-affordances-and-constraints-through-shape-and-object-actuation/",
+    "support": "Shape displays can provide changing constraints and actuate objects.",
+    "boundary": "The work does not qualify load-bearing tooling or deposited fixtures."
+  },
+  {
+    "ids": [
+      "A04R1"
+    ],
+    "title": "Perez et al.: Multipurpose silicon photonics signal processor core",
+    "url": "https://www.nature.com/articles/s41467-017-00714-1",
+    "support": "Experimental programmable waveguide routing and linear transformations.",
+    "boundary": "No validation of the PM compiler or its pinion mapping."
+  },
+  {
+    "ids": [
+      "A04R2"
+    ],
+    "title": "Perez-Lopez et al.: Multipurpose self-configuration of programmable photonic circuits",
+    "url": "https://www.nature.com/articles/s41467-020-19608-w",
+    "support": "Measured feedback used for characterization, routing and configuration.",
+    "boundary": "Component experiments do not guarantee convergence for arbitrary requested transforms."
+  },
+  {
+    "ids": [
+      "A05R1",
+      "A16R2"
+    ],
+    "title": "NASA: Robot Team Builds High-Performance Digital Structure",
+    "url": "https://www.nasa.gov/general/robot-team-builds-high-performance-digital-structure-for-nasa/",
+    "support": "Ground demonstration of coordinated autonomous structural block assembly.",
+    "boundary": "This does not establish deployed space construction or construction-seed semantics."
+  },
+  {
+    "ids": [
+      "A06R1"
+    ],
+    "title": "Suzuki et al.: RoomShift - Room-scale Dynamic Haptics for VR with Furniture-moving Swarm Robots",
+    "url": "https://ryosuzuki.org/roomshift/",
+    "support": "Demonstrated furniture-moving robots as physical VR proxies.",
+    "boundary": "Not a guarantee of arbitrary room layouts or unrestricted human contact."
+  },
+  {
+    "ids": [
+      "A06R2"
+    ],
+    "title": "HapticBots: Distributed Encountered-type Haptics for VR with Multiple Shape-changing Mobile Robots",
+    "url": "https://arxiv.org/abs/2108.10829",
+    "support": "Research prototype with moving and shape-changing haptic proxies.",
+    "boundary": "Does not validate PM mapping, readiness or cross-room replay contracts."
+  },
+  {
+    "ids": [
+      "A07R1"
+    ],
+    "title": "Optimizing multi-user indoor sound communications with acoustic reconfigurable metasurfaces (2024)",
+    "url": "https://www.nature.com/articles/s41467-024-45435-4",
+    "support": "Demonstrated room-channel shaping with tunable resonators.",
+    "boundary": "Does not validate this adaptive occupied-room architecture."
+  },
+  {
+    "ids": [
+      "A08R1"
+    ],
+    "title": "Burger et al., A mobile robotic chemist, Nature (2020)",
+    "url": "https://www.nature.com/articles/s41586-020-2442-2",
+    "support": "Autonomous operation across defined laboratory workstations.",
+    "boundary": "Does not establish arbitrary laboratory reconfiguration."
+  },
+  {
+    "ids": [
+      "A10R1"
+    ],
+    "title": "OpenUSD 25.11: Sdf Scene Description Foundations",
+    "url": "https://openusd.org/25.11/api/sdf_page_front.html",
+    "support": "Layered scene description and explicit composition.",
+    "boundary": "Does not itself guarantee network convergence or intent preservation."
+  },
+  {
+    "ids": [
+      "A11R1"
+    ],
+    "title": "Chen and Shea, An Autonomous Programmable Actuator and Shape Reconfigurable Structures Using Bistability and Shape Memory Polymers",
+    "url": "https://arxiv.org/abs/1711.00452",
+    "support": "Programmed thermal deployment and reconfigurable structures.",
+    "boundary": "Does not establish this repeated feedback-trimming architecture."
+  },
+  {
+    "ids": [
+      "A12R1"
+    ],
+    "title": "NASA Jet Propulsion Laboratory: NeBula",
+    "url": "https://www.jpl.nasa.gov/capabilities/robotics/nebula/",
+    "support": "Multi-robot autonomy with intermittent mesh communication.",
+    "boundary": "Does not establish autonomous repair under arbitrary partitions."
+  },
+  {
+    "ids": [
+      "A13R1"
+    ],
+    "title": "Cambridge: Staffordshire Bridges long-term monitoring",
+    "url": "https://www.cdbb.cam.ac.uk/research/digital-built-environment/staffordshire-bridges-long-term-performance-monitoring-using",
+    "support": "Installed fibre sensors, continuous acquisition and digital-twin analysis on real bridges.",
+    "boundary": "Does not demonstrate distributed material-memory modules or autonomous structural diagnosis."
+  },
+  {
+    "ids": [
+      "A14R1"
+    ],
+    "title": "WUR: Digital Twin controls cucumber cultivation",
+    "url": "https://edepot.wur.nl/712043",
+    "support": "A reported cultivation trial links models and sensors to climate, irrigation and staff pruning instructions.",
+    "boundary": "Does not demonstrate the proposed equipment-repair scheduler or autonomous handling of every biological disturbance."
+  },
+  {
+    "ids": [
+      "A15R1"
+    ],
+    "title": "Wang et al.: Structured fabrics with tunable mechanical properties",
+    "url": "https://authors.library.caltech.edu/records/t74qg-92f12",
+    "support": "Experiments demonstrate reversible pressure-controlled stiffening of interlocking structured fabrics.",
+    "boundary": "Does not qualify a finished garment, medical application, impact protection or unrestricted user contact."
+  },
+  {
+    "ids": [
+      "A16R1"
+    ],
+    "title": "NASA: Space-station printer builds a ratchet wrench",
+    "url": "https://www.nasa.gov/missions/station/space-station-3-d-printer-builds-ratchet-wrench-to-complete-first-phase-of-operations/",
+    "support": "An uplinked design was manufactured in orbit during a technology demonstration.",
+    "boundary": "The reported wrench was reserved for ground testing; this was not autonomous planetary fixture qualification."
+  },
+  {
+    "ids": [
+      "A17R1"
+    ],
+    "title": "Gongora et al.: A Bayesian experimental autonomous researcher",
+    "url": "https://open.bu.edu/handle/2144/42909",
+    "support": "Automated experiments and Bayesian optimization explored a defined mechanical design family.",
+    "boundary": "Does not establish unrestricted machine redesign, global optimality or qualification for arbitrary deployed tasks."
+  },
+  {
+    "ids": [
+      "A18R1"
+    ],
+    "title": "Feldmann et al.: Integrated photonic tensor core",
+    "url": "https://www.nature.com/articles/s41586-020-03070-1",
+    "support": "Demonstrates photonic in-memory convolution using phase-change arrays and optical frequency combs.",
+    "boundary": "Does not establish the proposed PM controller, arbitrary transforms or universal total-system efficiency advantages."
+  }
+]

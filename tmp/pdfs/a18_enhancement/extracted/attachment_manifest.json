@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Perpetuum_Mobile_Frontier_Applications_A1_0.pdf",
+    "bytes": 11302261,
+    "sha256": "8a2506a35bfdc316f6c96827293663b7a964d6932985e89ac659ea4f4f517bca"
+  },
+  {
+    "name": "A18_Definition_Enhanced_R1_0.md",
+    "bytes": 38829,
+    "sha256": "0d1a889d2408c71c33399e1a1d1065b64cf707456892113f7c9efbb42a28f19d"
+  },
+  {
+    "name": "content.json",
+    "bytes": 54335,
+    "sha256": "35c669fbf016fec865e431f75f6ffe6e9296d4bbb60c9f9eaeddbb6cc36882bd"
+  },
+  {
+    "name": "source_manifest.json",
+    "bytes": 878,
+    "sha256": "6821db3778ca8d56fdbe6467db73e8a77acf2eb03c5b9c91089ec2094d756790"
+  },
+  {
+    "name": "references.json",
+    "bytes": 4218,
+    "sha256": "f70e5d8ae578d186819cd17c93191afcc537bcdc762c05dc9b98ecdc79ecc3ef"
+  },
+  {
+    "name": "write_content.py",
+    "bytes": 35945,
+    "sha256": "dcd66fc8ad93e2ae117798eb0e48292f5170fd7eb81a8183539eaae311ea19ca"
+  },
+  {
+    "name": "prepare_sources.py",
+    "bytes": 3430,
+    "sha256": "77db44355589ad14d8d02ffb4ca681079d2f0962852e698d081679466f1bdaa6"
+  },
+  {
+    "name": "pm_content.json",
+    "bytes": 98627,
+    "sha256": "bc395d17b21434c6bac37374d754828352fed4febf4bd123fb065c9594b86b4b"
+  },
+  {
+    "name": "numeric_summary.json",
+    "bytes": 1403,
+    "sha256": "f23b5e17841a4d84763623548e007d075e130334d20f19ac30c6e4372d90731f"
+  },
+  {
+    "name": "reference_model.py",
+    "bytes": 21954,
+    "sha256": "a3825416460c3a02c25d4a505f38a896c219056b4ff91344ed0477afe4edb852"
+  },
+  {
+    "name": "reference_results.json",
+    "bytes": 48765,
+    "sha256": "70fffc3dcc39e52786e7a81f0d55eb69eca124a778680a1f80eabf5a213a6efc"
+  },
+  {
+    "name": "build_pdf.py",
+    "bytes": 12962,
+    "sha256": "03936bc7d9eb9cdc9fe8888f3bc986753ef5504c9950c76478423305bec6b0d0"
+  },
+  {
+    "name": "verify_pdf.py",
+    "bytes": 5700,
+    "sha256": "3c0d8bb846894ec2aa5992e53a22cf2abf9a3a2c2f8eb2cb88c4b284f1c6383c"
+  },
+  {
+    "name": "README.md",
+    "bytes": 4609,
+    "sha256": "4466585e667da9bf57edf2c64ac9a94ca7162541222f933611be2bcdf48ae491"
+  },
+  {
+    "name": "layout_report.json",
+    "bytes": 2542,
+    "sha256": "2d37f88bf708ed8434e0762b9d9e50ecfd6b9acd58f47b36e2c2036a75aabf17"
+  }
+]

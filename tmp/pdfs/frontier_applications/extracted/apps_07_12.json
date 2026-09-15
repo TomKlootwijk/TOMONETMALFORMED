@@ -1,0 +1,317 @@
+[
+  {
+    "id": 7,
+    "title": "Rooms with programmable acoustics",
+    "short_title": "Programmable acoustic rooms",
+    "modes": [
+      "analog",
+      "digital",
+      "physical"
+    ],
+    "families": [
+      "V04",
+      "V07"
+    ],
+    "scenario": "Two teams share a workshop, but each needs a different audio channel. A proposed room adjusts resonant wall panels to strengthen intended speaker-to-listener paths and reduce interference elsewhere. Microphones measure the result as furniture and occupants move. The aim is bounded acoustic zoning over selected frequencies, with explicit retuning intervals and electrical costs.",
+    "mechanism": "Motorized resonator cavities change boundary impedance, altering the room's measured acoustic transfer matrix. Research has demonstrated acoustic channel isolation using tunable resonators installed at room boundaries [A07R1]. The proposed system adds a versioned target map, microphone calibration and a bounded optimizer that selects panel configurations. It tests small candidate changes, accepts measured improvements and retains a known configuration when observations become unreliable. Speakers supply acoustic energy; motors and computation consume additional power. Passive boundaries redistribute and absorb sound; they cannot guarantee silence everywhere or arbitrary broadband channel separation.",
+    "source_roles": "PM pp. 22-23 provide V04 transfer-matrix fitting and the distinction between digital routing and actual wave coupling. UGTS assigns typed acoustic ports, ordered configurations and permitted connections. atomOS masks admit selected panel commands; WANTWOMBAN supplies the command/readback pattern through an acoustic observation adapter. PM pp. 28-29 add timestamped microphone observations and stale-data handling across distributed controllers.",
+    "equation": "p(w) = H(w,theta)*a(w)\ntheta_next = argmin_theta J(H_measured,H_target)\nJ = error_band + lambda*switching_cost",
+    "equation_context": "Here p and a are calibrated pressure amplitudes in pascals, making H dimensionless under the selected convention. Frequency w and panel configuration theta are explicit. The objective uses normalized error and switching cost. The model assumes approximately linear acoustics and stationary boundaries during each measurement.",
+    "loop": [
+      "Probe room",
+      "Estimate channels",
+      "Retune panels",
+      "Verify zones"
+    ],
+    "demonstrator": "Build a small enclosure with two speakers, four microphones and several independently adjustable resonators. Characterize the empty enclosure, then repeat with movable absorbing blocks. Optimize only a declared narrow frequency band and fixed listener locations. Compare static panels, conventional speaker equalization and the proposed boundary controller. Reserve previously unseen configurations for evaluation. Meter all speaker, motor and controller energy. Proposed criteria below are experiment targets, not existing performance claims.",
+    "metrics": [
+      {
+        "measure": "Channel isolation",
+        "criterion": "Improve median desired-to-unwanted mean-square-pressure ratio by at least 3 dB over static panels across the predefined held-out positions and frequency band."
+      },
+      {
+        "measure": "Retuning stability",
+        "criterion": "Complete each accepted reconfiguration within the declared settling budget, with no measured improvement reported from samples acquired before panel motion has settled."
+      },
+      {
+        "measure": "System value",
+        "criterion": "Report total energy and added latency alongside acoustic gain; retain adaptive boundaries only when the predefined benefit outweighs their measured operating costs."
+      }
+    ],
+    "failure": "A person entering a previously calibrated zone can invalidate the transfer matrix. Resonators also have bandwidth and travel limits, and microphones may confuse source changes with room changes. Failed validity checks must suspend optimization, retain bounded commands and record the unresolved acoustic condition.",
+    "future": "A later building could share room models across partitions, allowing meeting areas and listening zones to change with occupancy. Combining acoustic panels with movable furniture could broaden available configurations. The research gap is dependable adaptation over changing listeners, multiple sound sources and wide bandwidths without excessive measurement disturbance, motor noise or maintenance burden.",
+    "seed_role": "SEED fixes probe order, candidate configuration sampling and held-out evaluation scenes. Actual microphone signals, moving occupants and motor positions remain external records. Replaying the same seed reproduces the experiment design, not the room's physical sound field.",
+    "references": [
+      {
+        "id": "A07R1",
+        "title": "Optimizing multi-user indoor sound communications with acoustic reconfigurable metasurfaces (2024)",
+        "url": "https://www.nature.com/articles/s41467-024-45435-4",
+        "support": "Demonstrated room-channel shaping with tunable resonators.",
+        "boundary": "Does not validate this adaptive occupied-room architecture."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Laboratories that reconfigure their own experiments",
+    "short_title": "Laboratories that reconfigure experiments",
+    "modes": [
+      "digital",
+      "physical",
+      "analog measurement"
+    ],
+    "families": [
+      "V01",
+      "V05",
+      "V07"
+    ],
+    "scenario": "A materials laboratory repeatedly measures how a harmless test coating responds to temperature and illumination. Instead of repeating one fixed recipe, a proposed robotic workcell chooses its next measurement, moves samples between calibrated stations and changes permitted instrument settings. Each change carries a reason, resource budget and traceable specimen identity, enabling reproducible experimental campaigns.",
+    "mechanism": "A mobile manipulator or gantry transports specimens between dispensing, heating and optical measurement stations. A published mobile robotic chemist demonstrates autonomous use of laboratory workstations within a defined workflow [A08R1]. Here, reconfiguration means selecting validated routes, fixtures and settings from a finite capability library. An experimental-design policy ranks candidate measurements by predicted information gain and cost. Before execution, device compatibility, calibration validity and specimen availability are checked. Actual commands and observations update the model; an unexpected result can redirect the next experiment without rewriting what already occurred.",
+    "source_roles": "PM pp. 5-8 supply typed contracts, snapshot/proposal/commit and physical acknowledgment. UGTS turns instrument capabilities and workflow dependencies into inspectable definitions. WANTWOMBAN supplies the calibrated temperature/material/readback cycle. atomOS records admitted operations and observations without equating logical bits with measurements. V05 on PM pp. 24-25 contributes irreversible specimen history; V07 on pp. 28-29 handles device messages and interrupted acknowledgments.",
+    "equation": "x_next = argmax_x [IG(x|D)-lambda*Cost(x)]\nsubject to x in ValidCapabilities(state)\ny_next = Measure(Execute(x_next))\nD <- D union {(x_next,y_next)}",
+    "equation_context": "Candidate x describes a complete permitted experiment, including station settings and specimen identity. D contains observed data and uncertainties. Information gain IG and cost are normalized under a declared objective. The policy proposes experiments; it does not certify scientific truth or authorize capabilities absent from the registry.",
+    "loop": [
+      "Select experiment",
+      "Validate setup",
+      "Execute stations",
+      "Update evidence"
+    ],
+    "demonstrator": "Use a gantry, temperature-controlled stage, calibrated light source and camera to measure benign reference patches. Predefine fixture choices and exposure/temperature ranges. Compare a fixed grid with adaptive selection under identical measurement and energy budgets. Introduce a deliberately stale calibration and one interrupted station acknowledgment. Evaluate predictions against independent held-out measurements. Reproduce the decision sequence from recorded observations, while maintaining separate records for specimens consumed, altered or rejected.",
+    "metrics": [
+      {
+        "measure": "Information efficiency",
+        "criterion": "Reach the preregistered held-out prediction error using at least 20 percent fewer accepted measurements than the fixed-grid campaign under identical operating limits."
+      },
+      {
+        "measure": "Trace completeness",
+        "criterion": "Every accepted observation must resolve to a specimen, calibration, actual device setting and command acknowledgment; missing provenance prevents promotion into validated campaign data."
+      },
+      {
+        "measure": "Recovery behavior",
+        "criterion": "After injected communication loss, reconcile actual station and specimen state before continuing; no completed physical operation may be silently duplicated during tested recoveries."
+      }
+    ],
+    "failure": "An optimizer can exploit measurement artifacts instead of learning the coating response. Instrument drift, sample aging and fixture changes can masquerade as discoveries. The campaign therefore separates model uncertainty from apparatus faults and stops proposing dependent measurements when calibration or specimen history becomes unresolved.",
+    "future": "A future laboratory could assemble larger experimental workflows from interoperable instrument contracts and compare competing physical models during the same campaign. Robots might exchange qualified modules between stations, extending beyond changing settings. The unresolved challenge is validating those new configurations and maintaining scientific controls as hardware, samples and hypotheses change together over long campaigns.",
+    "seed_role": "SEED fixes candidate sampling, initial design points and tie-breaking. Measured outcomes enter the transcript and can change later selections. A seed without observations, instrument versions and sample preparation records cannot reconstruct either the adaptive decision path or the experiment.",
+    "references": [
+      {
+        "id": "A08R1",
+        "title": "Burger et al., A mobile robotic chemist, Nature (2020)",
+        "url": "https://www.nature.com/articles/s41586-020-2442-2",
+        "support": "Autonomous operation across defined laboratory workstations.",
+        "boundary": "Does not establish arbitrary laboratory reconfiguration."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Printers that grow structures under continuous inspection",
+    "short_title": "Printing under continuous inspection",
+    "modes": [
+      "digital",
+      "physical",
+      "analog sensing"
+    ],
+    "families": [
+      "V05",
+      "V01",
+      "V07"
+    ],
+    "scenario": "A printer builds a branching scaffold whose upper segments depend on the quality of earlier joints. The proposed machine scans newly deposited material and adjusts subsequent flow or path placement. It extends another branch only after its attachment region satisfies declared geometry and support conditions, keeping rejected material visible in the model and fabrication history.",
+    "mechanism": "A dispenser deposits a selected curable material while local scanning measures height and footprint. Vision-controlled jetting has demonstrated correction of subsequent deposition using measured surface geometry [A09R1]. This proposal adds a finite branch grammar and explicit support admission. The controller estimates deposition yield and shrinkage, compares measured geometry with the target, and modifies bounded commands for the next segment. Cure and adhesion require separately calibrated evidence; a correct visible outline is insufficient. Inspection is repeated at a declared sampling rate, with unresolved intervals recorded rather than described as uninterrupted observation.",
+    "source_roles": "PM pp. 24-25 define V05 deposition, inspection and accepted-support states. UGTS provides parametric sweeps, candidate attachment neighborhoods and durable branch lineage. atomOS binds intended masks to actual fabrication records. WANTWOMBAN supplies causal material feedback through a replacement height/process readout. V01 on PM pp. 16-17 supplies the finite target grammar; V07 supports separate scanner and dispenser acknowledgments.",
+    "equation": "h_next = h + eta*Q*dt/A - shrinkage\nalpha_dot = k(T,I)*(1-alpha), k >= 0\nextend = geometry_ok AND support_ok AND clearance_ok",
+    "equation_context": "Height h and shrinkage use metres, Q is volume flow, and A is footprint area. Yield eta is fitted. The illustrative cure fraction alpha requires formulation-specific kinetics. The Boolean extension decision combines measured or certified conditions, with uncertainty margins; it cannot infer strength from shape alone.",
+    "loop": [
+      "Deposit segment",
+      "Inspect result",
+      "Certify support",
+      "Extend branch"
+    ],
+    "demonstrator": "Print two-layer lattices containing straight segments and Y junctions with one calibrated material. Use independent microscopy and witness specimens to establish acceptable geometry and support. Introduce repeatable flow disturbances within the selected envelope. Compare fixed deposition, ordinary height feedback and the proposed guarded branch controller. Measure retained mass and waste. Record any occluded region, incomplete scan or failed support decision before allowing the next dependent segment to proceed.",
+    "metrics": [
+      {
+        "measure": "Geometry correction",
+        "criterion": "Reduce median absolute height error by at least 25 percent against the fixed-path baseline, while adding no more than 10 percent fabrication time."
+      },
+      {
+        "measure": "Support admission",
+        "criterion": "Accept no attachment that fails the predefined independent witness check in the demonstration set; report trial counts and unresolved support decisions explicitly."
+      },
+      {
+        "measure": "Material accounting",
+        "criterion": "Keep retained-mass balance residual within propagated measurement uncertainty, including waste and rejected deposits; compare additional scanning energy against the achieved reduction in rework."
+      }
+    ],
+    "failure": "A geometrically correct joint may contain an uncured layer, weak interface or hidden void. Sensors can also miss a defect behind the nozzle. The machine must preserve rejected deposits as obstructions and avoid extending unsupported branches while independent inspection or a validated process model remains unavailable.",
+    "future": "A later system could inspect an existing part, generate a repair branch around its measured defect and fabricate only the missing material. Multiple deposition and scanning robots could share the same specimen history. The critical gap is reliable online evidence of bonding and load capacity, especially when materials, access angles and thermal histories vary.",
+    "seed_role": "SEED generates target scaffolds, disturbance schedules and comparison cases. The actual deposited geometry, curing history and material consumption remain measured inputs. Regenerating an identical planned scaffold does not reproduce an identical physical structure without matching fabrication conditions.",
+    "references": [
+      {
+        "id": "A09R1",
+        "title": "Buchner et al., Vision-controlled jetting for composite systems and robots, Nature (2023)",
+        "url": "https://www.nature.com/articles/s41586-023-06684-3",
+        "support": "Surface measurement guides subsequent material deposition.",
+        "boundary": "Visible geometry does not certify structural support."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Persistent worlds synchronized through rules and edits",
+    "short_title": "Persistent worlds through shared rules",
+    "modes": [
+      "digital",
+      "networked"
+    ],
+    "families": [
+      "V01",
+      "V07"
+    ],
+    "scenario": "Several people revisit the same virtual workshop from different devices. Most objects are regenerated from shared rules, while their placements, annotations and modifications persist as recorded edits. The proposed world exchanges semantic changes instead of repeatedly transmitting complete geometry, preserving durable object identities and showing unresolved conflicts when two users alter the same dependent structure.",
+    "mechanism": "A finite generator expands a pinned grammar and seed into canonical object records. Ordered edit layers modify those records; clients render them through their own adapters. OpenUSD already provides composable scene-description layers with explicit composition semantics [A10R1]. The proposed synchronization layer adds command identities, rule hashes, dependency invalidation and an authoritative ordering policy for conflicting edits. Independent changes may merge only under declared commutation rules. A changed generator creates a versioned migration problem, not permission to silently reinterpret old objects. Canonical world state is compared before device-specific rendering.",
+    "source_roles": "PM pp. 11-12 specify exact SEED framing and replay; pp. 16-17 define V01 editable generated worlds. UGTS provides definition DAGs and durable lineage. atomOS supplies canonical occupancy groups and storage adapters. WANTWOMBAN contributes optional pinion and seam motifs. K1 evidence remains bounded implementation evidence on PM p. 32; V07 supplies versioned messages and stale-state reconciliation on pp. 28-29.",
+    "equation": "base = Generate(seed,descriptor)\nworld = Replay(base,CanonicalOrder(accepted_edits))\nreplica_ok = Hash(Canonical(world_A)) == Hash(Canonical(world_B))",
+    "equation_context": "The descriptor pins algorithms, assets, numeric rules and finite budgets. Accepted edits include actor, object, operation and causal identity. Hash equality checks serialized state integrity under the chosen encoding; it does not establish that conflict resolution matches user intent or that different renderers produce identical pixels.",
+    "loop": [
+      "Regenerate base",
+      "Receive edits",
+      "Resolve conflicts",
+      "Publish world"
+    ],
+    "demonstrator": "Run two independently implemented clients against a bounded scene containing branching objects, one portal and editable annotations. Disconnect one client, make overlapping and independent edits, then reconnect. Compare canonical objects, lineage and accepted edit order before rendering. Repeat with a deliberately changed grammar hash. Measure descriptor, edits, cache and transmitted bytes against a fully materialized scene baseline with identical persistence semantics. Include deletion, reparenting and dependent-geometry invalidation cases.",
+    "metrics": [
+      {
+        "measure": "State convergence",
+        "criterion": "Require identical canonical integer object records after replaying the same accepted transcript on both implementations, including deletion, dependency changes and reconnect scenarios."
+      },
+      {
+        "measure": "Conflict fidelity",
+        "criterion": "Present every unresolved noncommuting edit conflict with its original operations intact; no tested reconnection may silently discard a user's accepted semantic change."
+      },
+      {
+        "measure": "Storage benefit",
+        "criterion": "Count descriptor, asset, edit, transcript and cache bytes together; claim compression only when total storage beats the materialized baseline at matched semantics."
+      }
+    ],
+    "failure": "Identical seeds cannot repair missing assets, incompatible arithmetic or divergent grammar versions. Automatic ordering can also produce a technically valid but unwanted edit result. Clients must reject unresolved descriptors and distinguish explicit conflict decisions from ordinary replay, preserving the original operations for later review.",
+    "future": "The same architecture could connect persistent training environments, design spaces and digital twins across headsets and workstations. Physical observations could become additional versioned events without overwriting the generative model. The main research gap is durable semantic migration: old edits must retain understandable meaning when object rules, simulation models and collaborating software evolve over years.",
+    "seed_role": "SEED defines the reproducible base world and named procedural streams. Human edits remain explicit events, including their conflict decisions. Neither a seed nor a hash compresses arbitrary unrecorded creative changes into recoverable information.",
+    "references": [
+      {
+        "id": "A10R1",
+        "title": "OpenUSD 25.11: Sdf Scene Description Foundations",
+        "url": "https://openusd.org/25.11/api/sdf_page_front.html",
+        "support": "Layered scene description and explicit composition.",
+        "boundary": "Does not itself guarantee network convergence or intent preservation."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Deployable structures that retune themselves",
+    "short_title": "Deployable structures that retune",
+    "modes": [
+      "physical",
+      "digital",
+      "analog sensing"
+    ],
+    "families": [
+      "V03",
+      "V06",
+      "V07"
+    ],
+    "scenario": "A shelter or instrument support unfolds, measures its loaded shape, and makes small adjustments as wind or temperature changes. The structure separates deployment movements from alignment corrections. Sensors report hinge positions, strain and thermal state, while the controller retains a bounded operating envelope and records of locks, contacts and power.",
+    "mechanism": "Foldable members connect through joints and mechanical latches. Motors or thermally activated elements perform deployment; reversible trim actuators handle later corrections. Research combining shape-memory polymers with bistability demonstrates programmed deployment and shape reconfiguration [A11R1]. It does not establish unrestricted repeated retuning. This proposal uses measured joint and strain feedback to select bounded corrections after deployment, updating its stiffness/contact model when a latch changes state. A support path must remain load-bearing throughout each transition. Thermal actuation requires heating and cooling accounts, while stored spring energy and external loads remain explicit.",
+    "source_roles": "PM pp. 20-21 connect UGTS ordered hinges to separately calibrated mechanics, including rooted per-panel transforms and passive coupling through failed cells. WANTWOMBAN supplies local thermal feedback when thermal actuators are chosen. atomOS records command admission and latch state. V06 on PM pp. 26-27 accounts for finite mission resources; V07 retains distributed sensor age and acknowledgment history.",
+    "equation": "M(q)*qddot + C(q,qdot)*qdot + D*qdot\n  + grad_q U(q,latch) = tau + F_ext\nq_target = argmin_q [shape_error + lambda*actuation_cost]\ncommit_latch only if load_path_ok AND measured_lock_ok",
+    "equation_context": "Generalized coordinates q describe joints; U is elastic and gravitational potential for the current latch configuration. M is inertia; C*qdot contains velocity-dependent inertial terms, and D damping. tau and F_ext are actuator and other generalized loads. Travel, stress and stability constrain both targets and transitions.",
+    "loop": [
+      "Deploy members",
+      "Measure loads",
+      "Trim geometry",
+      "Verify locks"
+    ],
+    "demonstrator": "Build a small four-panel frame with instrumented hinges, reversible trim motors and independently monitored latches. Apply known dead loads and controlled disturbances after deployment. Compare fixed geometry with feedback trimming under equal power limits. Track panel positions using an external camera and strain using independent sensors. Include a failed latch indication and a sensor delay. Repeatedly cycle the structure within a predefined envelope, recording fatigue indicators and any irreversible deformation.",
+    "metrics": [
+      {
+        "measure": "Shape regulation",
+        "criterion": "Keep held-out loaded-shape error below the preregistered tolerance while respecting measured joint travel and stress limits throughout every accepted correction in the demonstration."
+      },
+      {
+        "measure": "Transition integrity",
+        "criterion": "Do not accept a latch change without independent lock confirmation and a validated load path; record all rejected transitions and observed structural excursions."
+      },
+      {
+        "measure": "Resource advantage",
+        "criterion": "Compare useful alignment improvement with total deployment, trimming, sensing and cooling energy; require the declared benefit at equal load capacity and mission duration."
+      }
+    ],
+    "failure": "A local position reading can conceal a failed lock or redistributed load elsewhere. Temperature can change stiffness and actuator response simultaneously. The controller must stop dependent movements when its load-path model is invalid, retaining passive structural support rather than assuming a digital latch flag carries force.",
+    "future": "Larger systems could become temporary shelters, adjustable antenna supports or deployable instrument platforms that compensate slow distortion. Distributed nodes could coordinate repair inspections with their geometry records. The unresolved engineering work is qualification of transitions, fatigue, environmental exposure and fail-passive load support, particularly when thermal and mechanical aging change the calibrated model during a mission.",
+    "seed_role": "SEED generates repeatable deployment sequences, disturbance cases and optimization starting points in simulation. Actual latch engagement, strain and aging require observations. A repeated command sequence cannot guarantee repeated geometry after material or contact properties have changed.",
+    "references": [
+      {
+        "id": "A11R1",
+        "title": "Chen and Shea, An Autonomous Programmable Actuator and Shape Reconfigurable Structures Using Bistability and Shape Memory Polymers",
+        "url": "https://arxiv.org/abs/1711.00452",
+        "support": "Programmed thermal deployment and reconfigurable structures.",
+        "boundary": "Does not establish this repeated feedback-trimming architecture."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Repair swarms that tolerate communication gaps",
+    "short_title": "Repair swarms across communication gaps",
+    "modes": [
+      "physical",
+      "digital",
+      "networked"
+    ],
+    "families": [
+      "V07",
+      "V05",
+      "V06"
+    ],
+    "scenario": "Three robots inspect and patch an isolated installation where radio links repeatedly disappear behind structures. The proposed team shares a repair map when connected, but each robot retains bounded local authority and verified specimen history. A disconnected robot can finish an already reserved task or inspect another region, while uncertain shared work waits for reconciliation.",
+    "mechanism": "Each agent stores a local map, resource state, task reservation and actual-command ledger. Independent sensors maintain local clearance and verify completed work. JPL's NeBula describes multi-robot autonomy with uncertainty-aware navigation and mesh networking that accommodates intermittent links [A12R1]. This proposal extends that component basis with exclusive repair-region reservations, bounded offline actions and post-reconnection evidence merging. Peers exchange versioned observations instead of assuming a plan was executed. A lost acknowledgment triggers inspection of actual repair state. Material deposition remains irreversible, so duplicate commands need physical reconciliation as well as message deduplication.",
+    "source_roles": "PM pp. 28-29 provide V07 command identities, stale-data envelopes and separate digital/physical replay. UGTS supplies local support, compatibility and repair lineage. atomOS records admitted task and actuator states. WANTWOMBAN supplies measured actuation feedback. V05 on PM pp. 24-25 preserves deposited/rejected material; V06 on pp. 26-27 limits battery, consumables and mission duration independently of successful communication.",
+    "equation": "uncertainty(age) = e0 + v0_bound*age + 0.5*a_bound*age^2\noffline_ok = reserved AND local_clearance AND resources_ok\nresume_shared = reconcile(commands,measurements,repair_state)",
+    "equation_context": "The positional envelope assumes a bounded initial position error, initial speed and subsequent acceleration. Reservation ownership must remain valid under a specified lease or persistent assignment protocol. Local clearance uses current sensing. The rules permit bounded offline work; they do not imply agreement during arbitrary partitions.",
+    "loop": [
+      "Reserve region",
+      "Inspect locally",
+      "Repair and record",
+      "Reconcile evidence"
+    ],
+    "demonstrator": "Use three tabletop mobile agents around an instrumented mock installation, initially placing removable markers instead of structural patches. Assign separate repair regions and track all robots independently. Inject bounded delay, duplicate messages, disconnections and a lost completion acknowledgment. Compare centralized stop-on-disconnect behavior with the proposed local policy under identical task and battery budgets. After reconciliation succeeds, repeat selected cases with benign deposition and inspect whether any physical task was inadvertently duplicated.",
+    "metrics": [
+      {
+        "measure": "Task completion",
+        "criterion": "Complete more predefined independent tasks than the stop-on-disconnect baseline during the same outage schedule, without exceeding equal energy, material or local-motion limits."
+      },
+      {
+        "measure": "Duplicate prevention",
+        "criterion": "Execute no repair twice in the fault trial set; verify physical outcomes independently and report unresolved cases rather than counting acknowledgments as completion."
+      },
+      {
+        "measure": "Evidence convergence",
+        "criterion": "After connectivity returns, agents must resolve completed work to compatible specimen histories and reservation ownership before accepting new actions in overlapping repair regions."
+      }
+    ],
+    "failure": "Unbounded partitions can prevent exclusive ownership from being safely reassigned. Stale geometry, clock uncertainty or hidden partial repairs may invalidate an otherwise reasonable local plan. The system therefore narrows authority during disconnection and preserves uncertain work as unresolved until fresh sensing and an explicit ownership protocol permit continuation.",
+    "future": "A larger swarm could maintain remote power installations, inspect deployed structures and fabricate small repairs using shared generative maps. Some robots might relay messages while others inspect or carry material. The central gap is coordinating physical exclusivity and trustworthy repair evidence under changing contacts, failed agents and prolonged communication loss without depending on a permanently reachable coordinator.",
+    "seed_role": "SEED fixes simulated faults, initial task allocation and deterministic tie-breaking over stable identifiers. Real message arrival times and partial physical actions remain logged events. Replaying digital decisions requires that transcript; matching the repaired installation additionally requires independent physical verification.",
+    "references": [
+      {
+        "id": "A12R1",
+        "title": "NASA Jet Propulsion Laboratory: NeBula",
+        "url": "https://www.jpl.nasa.gov/capabilities/robotics/nebula/",
+        "support": "Multi-robot autonomy with intermittent mesh communication.",
+        "boundary": "Does not establish autonomous repair under arbitrary partitions."
+      }
+    ]
+  }
+]
