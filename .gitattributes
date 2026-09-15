@@ -3,3 +3,4 @@
 output/pdf/*.pdf binary
 output/pdf/perpetuum_mobile_source/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 output/pdf/frontier_applications_source/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+output/pdf/a18_wave_material_source/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

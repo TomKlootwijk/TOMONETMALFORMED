@@ -1,0 +1,19 @@
+{
+  "scope": "Editorial completeness, PDF structure, glyph margins and embedded-byte integrity only; no new physical application validation.",
+  "edition": "A18 Definition and Enhanced Architecture R1.0",
+  "pdf": "A18_Wave_Material_Computer_Definition_Enhanced_R1_0.pdf",
+  "sha256": "241f4a5c62d102a7582d2e2e4091b6a47dd0d3636074810ba5a734fe218e4aec",
+  "pages": 22,
+  "application": "A18",
+  "bookmarks": 22,
+  "text_witness_checks": 386,
+  "glyph_margin_violations": 0,
+  "attachments": 16,
+  "attachment_hash_checks": 15,
+  "companion_pages": 56,
+  "normative_pm_pages": 38,
+  "synthetic_model_checks": 44,
+  "citation_ids": 7,
+  "cited_ids_resolved": 7,
+  "result": "pass"
+}
