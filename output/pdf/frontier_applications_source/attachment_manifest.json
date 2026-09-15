@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Perpetuum_Mobile_Tom_Klootwijk_V1_0.pdf",
+    "bytes": 3317197,
+    "sha256": "b6532f9638e6cca77d75c2636a54afb5daf587a4e69aceff72102384252a5a55"
+  },
+  {
+    "name": "Frontier_Applications_A1_0.md",
+    "bytes": 124671,
+    "sha256": "30e2fde68c0948562a22e1f30224dcab5b7d89b6f9efcfc899f38b11f63eaf64"
+  },
+  {
+    "name": "original_reply.md",
+    "bytes": 5029,
+    "sha256": "48de58ee743d06fb7234ef19fa5bcfb5ae1e5a1a4e563bc1b436e2cd05eaba40"
+  },
+  {
+    "name": "reply_apps.json",
+    "bytes": 5124,
+    "sha256": "6d5d5086018ab0580afef775426dd16ac5d91160a4b14a13b8b93de2e9f71d54"
+  },
+  {
+    "name": "source_manifest.json",
+    "bytes": 946,
+    "sha256": "0fdd05d900b106262982ada56c0a0fd305bb0847fe6d75474817934dc16ab887"
+  },
+  {
+    "name": "imagegen_prompt.md",
+    "bytes": 1820,
+    "sha256": "cc4be41e9812549146cc2b007a40c90865d1b7a21eb01cccdf508f76c2879931"
+  },
+  {
+    "name": "apps_01_06.json",
+    "bytes": 34452,
+    "sha256": "4d8f2af7da16f87fd9548f8a69a24a972abb761de15cc75927d3f3fa52c31e4c"
+  },
+  {
+    "name": "apps_07_12.json",
+    "bytes": 32508,
+    "sha256": "b47dc87b523210b3509bd11a7bdb82ce8f9c777c28f7556488329c7959a94882"
+  },
+  {
+    "name": "apps_13_18.json",
+    "bytes": 34139,
+    "sha256": "d3726b7c5dd90e1bc1f2945ffefa27cba06cf6a109a77f79c1eaf2810c374c77"
+  },
+  {
+    "name": "content.json",
+    "bytes": 170854,
+    "sha256": "806c1c8c1307d0f846ced7b0d1594a8f6bf9278e8407d83fd3fe57d4509b6bc0"
+  },
+  {
+    "name": "references.json",
+    "bytes": 8633,
+    "sha256": "e65751cc479ef68979b231d5b26cb3d8792c1c443a5a018a785377b2e5944e5a"
+  },
+  {
+    "name": "assemble_content.py",
+    "bytes": 23430,
+    "sha256": "28f38d73369f5a8c7c3dec2033b0e3ceb3ba6bc19c60c40dff3bf778d3866871"
+  },
+  {
+    "name": "build_pdf.py",
+    "bytes": 11393,
+    "sha256": "83ad0acb054a74259d606430e2df843824c6d5aa51e96723cd1a9c36abb36609"
+  },
+  {
+    "name": "verify_pdf.py",
+    "bytes": 5142,
+    "sha256": "487e63c2d3aa9572d17d70e9730aa95e5d279c78885e03fa59b0e6781318cf61"
+  },
+  {
+    "name": "README.md",
+    "bytes": 2973,
+    "sha256": "5fbb5ee3d50a78f91cd00fcff88527708f5d10e806ac41138a2406ea1e3504ba"
+  },
+  {
+    "name": "layout_report.json",
+    "bytes": 6165,
+    "sha256": "1dfb2343fd3ac1452150cea3cf4878b54ba94352c3393d7bdccdfc55ae030d95"
+  },
+  {
+    "name": "frontier_cover.png",
+    "bytes": 2577470,
+    "sha256": "352b57de68b8fb0db818976208c15a1761976651dc4257e2e0f498e13dddf644"
+  }
+]

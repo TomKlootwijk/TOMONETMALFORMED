@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Habitats that inspect and repair themselves",
+    "text": "Material sensors detect changes, robots investigate, and fabrication systems construct measured repairs. The same model accounts for energy, water, replacement material and waste. The hardest problem is verifying that a repair is structurally sound."
+  },
+  {
+    "id": 2,
+    "title": "Robot skin that computes through its material",
+    "text": "Physical memory retains recent touch, temperature and deformation. A trained readout recognizes slipping or changing loads, then nearby actuators reshape the surface. The skin becomes part of the sensing and computation system."
+  },
+  {
+    "id": 3,
+    "title": "A workshop table that becomes its own tooling",
+    "text": "A programmable surface reshapes into supports, cradles, molds or assembly fixtures. Cameras and load sensors verify the shape; a printer adds features the moving surface cannot produce."
+  },
+  {
+    "id": 4,
+    "title": "A programmable optical nervous system",
+    "text": "Photonic networks route signals and perform calibrated matrix operations. When a component drifts or fails, the system measures the change and searches for another usable configuration."
+  },
+  {
+    "id": 5,
+    "title": "Remote manufacturing from a “construction seed”",
+    "text": "Send a compact design, ruleset and acceptance criteria to a remote workshop. Its machines reconstruct the design, adapt it to measured surroundings and record every physical deviation."
+  },
+  {
+    "id": 6,
+    "title": "VR environments with physical, moving geometry",
+    "text": "A seeded virtual world coordinates with actuated surfaces and props, creating tangible controls, terrain or objects. Reachability, tracking and human-contact limits would constrain each transformation."
+  },
+  {
+    "id": 7,
+    "title": "Rooms with programmable acoustics",
+    "text": "Movable panels and tunable acoustic elements reshape measured sound propagation for different listening zones, performances or sensing tasks."
+  },
+  {
+    "id": 8,
+    "title": "Laboratories that reconfigure their own experiments",
+    "text": "Robotic fixtures position samples, programmable optics change illumination, and fabrication produces custom holders or channels. Seeded stimuli make successive experiments comparable."
+  },
+  {
+    "id": 9,
+    "title": "Printers that grow structures under continuous inspection",
+    "text": "Each branch is deposited, scanned and checked before the next branch depends on it. Failed geometry becomes a correction or rework task with an explicit material history."
+  },
+  {
+    "id": 10,
+    "title": "Persistent worlds synchronized through rules and edits",
+    "text": "Devices regenerate a shared environment from a seed and versioned definitions, then exchange edits and observations attached to stable object identities."
+  },
+  {
+    "id": 11,
+    "title": "Deployable structures that retune themselves",
+    "text": "Instrument mounts, shades or support structures unfold through guarded hinge sequences, then adjust to measured temperature, load and vibration."
+  },
+  {
+    "id": 12,
+    "title": "Repair swarms that tolerate communication gaps",
+    "text": "Robots share reproducible plans but maintain local physical control. When communication returns, they reconcile observations, interrupted actions and completed repairs."
+  },
+  {
+    "id": 13,
+    "title": "Infrastructure with distributed physical memory",
+    "text": "Sensor networks retain patterns of loading and thermal exposure. Those histories help select where bridges, machines or structures should receive closer inspection."
+  },
+  {
+    "id": 14,
+    "title": "Greenhouses that coordinate survival and maintenance",
+    "text": "Irrigation, heating, storage and recovery share a resource model. Robots inspect leaks or blocked channels and manufacture bounded replacements when appropriate."
+  },
+  {
+    "id": 15,
+    "title": "Clothing with a changing mechanical response",
+    "text": "Garments could adjust shape, support or thermal behavior using local sensing and actuation. Material memory could help distinguish brief contact from sustained loading."
+  },
+  {
+    "id": 16,
+    "title": "Planetary equipment that manufactures its own fixtures",
+    "text": "A rover measures an unfamiliar surface, generates a suitable support or tool attachment, fabricates it and verifies its fit before use."
+  },
+  {
+    "id": 17,
+    "title": "Machines that test their own design alternatives",
+    "text": "A digital model proposes a bounded modification; a fabrication system builds it; instruments measure the result; the next design incorporates that evidence."
+  },
+  {
+    "id": 18,
+    "title": "Combined wave-and-material computers",
+    "text": "Fast optical or acoustic mixing feeds slower material memory, with digital control handling configuration and readout. The central research question is whether the complete system gains anything after conversion, calibration and control costs."
+  }
+]
